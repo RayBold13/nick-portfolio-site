@@ -246,11 +246,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // === Infinite Scroll Carousel with Parallax ===
-    const config = {
-      SCROLL_SPEED: 1.75,
-      LERP_FACTOR: 0.05,
-      MAX_VELOCITY: 150,
-    };
+    const isMobile = window.innerWidth <= 768;
+const config = {
+  SCROLL_SPEED: isMobile ? 2.5 : 1.75,
+  LERP_FACTOR: isMobile ? 0.12 : 0.05,
+  MAX_VELOCITY: isMobile ? 200 : 150,
+};
 
     const state = {
       currentX: 0,
@@ -376,7 +377,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function handleTouchMove(e) {
       if (!state.isDragging) return;
 
-      const deltaX = (e.touches[0].clientX - state.startX) * 1.5;
+      const deltaX = (e.touches[0].clientX - state.startX) * 2.5;
       state.targetX = state.lastX + deltaX;
       state.dragDistance = Math.abs(deltaX);
       if (state.dragDistance > 5) state.hasActuallyDragged = true;

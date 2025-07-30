@@ -1141,6 +1141,7 @@ body:has([data-cursor]:hover) .cursor {
     top: 0%;
     left: 0%;
     transform: translateY(-50%, -50%);
+    touch-action: pan-x;
     
   }
 
@@ -1150,6 +1151,7 @@ body:has([data-cursor]:hover) .cursor {
     height: 100%;
     display: flex;
     gap: 20px;
+    will-change: transform;
   }
 
   .slide{
