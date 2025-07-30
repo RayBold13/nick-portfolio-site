@@ -211,39 +211,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // === Hover Image Swap ===
-    const imgA = document.querySelector('.img-a');
-    const imgB = document.querySelector('.img-b');
-    if (imgA && imgB) {
-      let isImgAActive = true;
-      const listItems = document.querySelectorAll('.list-item');
+const imgA = document.querySelector('.img-a');
+const imgB = document.querySelector('.img-b');
+if (imgA && imgB) {
+  let isImgAActive = true;
+  const listItems = document.querySelectorAll('.list-item');
 
-      listItems.forEach(item => {
-        const imageUrl = item.getAttribute('data-img');
+  listItems.forEach(item => {
+    const imageUrl = item.getAttribute('data-img');
 
-        item.addEventListener('mouseenter', () => {
-          if (!imageUrl) return;
+    item.addEventListener('mouseenter', () => {
+      if (!imageUrl) return;
 
-          if (isImgAActive) {
-            imgB.src = imageUrl;
-            imgB.classList.add('active');
-            imgA.classList.remove('active');
-          } else {
-            imgA.src = imageUrl;
-            imgA.classList.add('active');
-            imgB.classList.remove('active');
-          }
+      const imgToShow = isImgAActive ? imgB : imgA;
 
-          isImgAActive = !isImgAActive;
-        });
+      imgToShow.onload = () => {
+        imgToShow.classList.add('active');
+        (isImgAActive ? imgA : imgB).classList.remove('active');
+        isImgAActive = !isImgAActive;
+      };
 
-        item.addEventListener('mouseleave', () => {
-          imgA.classList.remove('active');
-          imgB.classList.remove('active');
-        });
-      });
-    } else {
-      console.warn("Hover images missing");
-    }
+      imgToShow.src = imageUrl;
+    });
+
+    item.addEventListener('mouseleave', () => {
+      imgA.classList.remove('active');
+      imgB.classList.remove('active');
+    });
+  });
+} else {
+  console.warn("Hover images missing");
+}
+
 
     // === Infinite Scroll Carousel with Parallax ===
     const isMobile = window.innerWidth <= 768;
