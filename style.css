@@ -1228,6 +1228,13 @@ body:has([data-cursor]:hover) .cursor {
     clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%);
   }
 
+  @media (max-width:700px) {
+    .project-tag{
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+    
+  }
+
   .slide:hover .project-tag{
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
   }
