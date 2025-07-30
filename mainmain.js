@@ -224,28 +224,48 @@ const preloadHoverImages = () => {
 
 preloadHoverImages();
 
-// === Hover Image Swap (Single Image) ===
-const hoverImg = document.querySelector('.img-a'); // reuse your existing class
+// === Hover Image Swap (Single Image Approach) ===
+const bgImg = document.querySelector('.bg-img');
+const listItems = document.querySelectorAll('.list-item');
 
-if (hoverImg) {
-  const listItems = document.querySelectorAll('.list-item');
+if (bgImg && listItems.length) {
+  let preloadCache = {};
+
+  // Preload hover images
+  listItems.forEach(item => {
+    const imageUrl = item.getAttribute('data-img');
+    if (imageUrl) {
+      const img = new Image();
+      img.src = imageUrl;
+      preloadCache[imageUrl] = img;
+    }
+  });
 
   listItems.forEach(item => {
     const imageUrl = item.getAttribute('data-img');
 
     item.addEventListener('mouseenter', () => {
-      if (!imageUrl) return;
-      hoverImg.src = imageUrl;
-      hoverImg.classList.add('active');
+      if (!imageUrl || bgImg.src.includes(imageUrl)) return;
+
+      // Hide current image to start transition
+      bgImg.classList.remove('active');
+
+      setTimeout(() => {
+        bgImg.src = imageUrl;
+        requestAnimationFrame(() => {
+          bgImg.classList.add('active');
+        });
+      }, 100); // delay before switching image and fading back in
     });
 
     item.addEventListener('mouseleave', () => {
-      hoverImg.classList.remove('active');
+      bgImg.classList.remove('active');
     });
   });
 } else {
-  console.warn("Hover image element (.img-a) missing");
+  console.warn("Single hover image or list items missing");
 }
+
 
 
 
