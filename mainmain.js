@@ -210,6 +210,21 @@ document.addEventListener('DOMContentLoaded', () => {
       }, ">-0.8");
     });
 
+// === Preload Hover Images ===
+const preloadHoverImages = () => {
+  const listItems = document.querySelectorAll('.list-item');
+  listItems.forEach(item => {
+    const imageUrl = item.getAttribute('data-img');
+    if (imageUrl) {
+      const img = new Image();
+      img.src = imageUrl;
+    }
+  });
+};
+
+preloadHoverImages();
+
+
     // === Hover Image Swap ===
 const imgA = document.querySelector('.img-a');
 const imgB = document.querySelector('.img-b');
