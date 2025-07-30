@@ -255,7 +255,7 @@ if (bgImg && listItems.length) {
         requestAnimationFrame(() => {
           bgImg.classList.add('active');
         });
-      }, 100); // delay before switching image and fading back in
+      }, 500); // delay before switching image and fading back in
     });
 
     item.addEventListener('mouseleave', () => {
