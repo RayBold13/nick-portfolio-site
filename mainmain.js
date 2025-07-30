@@ -225,36 +225,24 @@ const preloadHoverImages = () => {
 preloadHoverImages();
 
 
-// === Hover Image Swap (Optimized with Preload) ===
-const imgA = document.querySelector('.img-a');
-const imgB = document.querySelector('.img-b');
-
-if (imgA && imgB) {
-  let isImgAActive = true;
+// === Hover Image Swap (Single <img>) ===
+const hoverImage = document.querySelector('.hover-image');
+if (hoverImage) {
   const listItems = document.querySelectorAll('.list-item');
 
   listItems.forEach(item => {
     const imageUrl = item.getAttribute('data-img');
+    if (!imageUrl) return;
 
     item.addEventListener('mouseenter', () => {
-      if (!imageUrl) return;
-
-      const imgToShow = isImgAActive ? imgB : imgA;
-      imgToShow.src = imageUrl;
-
-      // Immediately swap visibility (browser will use cached image if preloaded)
-      imgToShow.classList.add('active');
-      (isImgAActive ? imgA : imgB).classList.remove('active');
-      isImgAActive = !isImgAActive;
+      hoverImage.src = imageUrl;
+      hoverImage.classList.add('active'); // Optional for fade in
     });
 
     item.addEventListener('mouseleave', () => {
-      imgA.classList.remove('active');
-      imgB.classList.remove('active');
+      hoverImage.classList.remove('active'); // Optional for fade out
     });
   });
-} else {
-  console.warn("Hover images missing");
 }
 
 
