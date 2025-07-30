@@ -224,26 +224,29 @@ const preloadHoverImages = () => {
 
 preloadHoverImages();
 
+// === Hover Image Swap (Single Image) ===
+const hoverImg = document.querySelector('.img-a'); // reuse your existing class
 
-// === Hover Image Swap (Single <img>) ===
-const hoverImage = document.querySelector('.hover-image');
-if (hoverImage) {
+if (hoverImg) {
   const listItems = document.querySelectorAll('.list-item');
 
   listItems.forEach(item => {
     const imageUrl = item.getAttribute('data-img');
-    if (!imageUrl) return;
 
     item.addEventListener('mouseenter', () => {
-      hoverImage.src = imageUrl;
-      hoverImage.classList.add('active'); // Optional for fade in
+      if (!imageUrl) return;
+      hoverImg.src = imageUrl;
+      hoverImg.classList.add('active');
     });
 
     item.addEventListener('mouseleave', () => {
-      hoverImage.classList.remove('active'); // Optional for fade out
+      hoverImg.classList.remove('active');
     });
   });
+} else {
+  console.warn("Hover image element (.img-a) missing");
 }
+
 
 
 
