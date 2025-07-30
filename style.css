@@ -1105,6 +1105,11 @@ body:has([data-cursor]:hover) .cursor {
     transform: scale(1.24);
     overflow: visible;
   }
+
+  .bg-img:not([src]):not([src=""]) {
+    display: none;
+  }
+  
   
   .bg-img.active {
     opacity: 1;
