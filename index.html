@@ -2,185 +2,388 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="d-none">
-        <div class="logo d-flex gap-4">
-            <div class="name">Nick Anderson</div>
-            <div class="role">Marketing Strategist</div>
-        </div>
-        <ul class="nav">
-            <li><a href="/index.html" class="primary-btn">Index</a></li>
-            <li><button class="flex-btn">
-                <div class="primary-btn">Work(s)</div>
-                <div class="primary-btn"></div>
-            </button>
-            <ul class="flex-btn-dropdown">
-                <li><a href="" class="primary-btn"><div class="label-text-wrap">Doja Cat: Scarlet Album Campaign</div></a></li>
-                <li><a href="" class="primary-btn"><div class="label-text-wrap">Kenny Mason: Angel Eyes</div></a></li>
-                <li><a href="" class="primary-btn"><div class="label-text-wrap">Danny Glover: Album #1</div></a></li>
-                <li><a href="" class="primary-btn"><div class="label-text-wrap">Normani: Album #1</div></a></li>
-                <li><a href="" class="primary-btn"><div class="label-text-wrap">Foushee: Album #1</div></a></li>
-                <li><a href="" class="primary-btn"><div class="label-text-wrap">Lisa: Black Star</div></a></li>
-            </ul>
-            </li>
-            <li><a href="/collaborators.html" class="primary-btn">Collaborators</a></li>
-            <li><a href="" class="primary-btn">About</a></li>
-            <li><a href="" class="primary-btn">Contact</a></li>
-        </ul>
-    </header>
 
-    <header class="font-size-11">
-        <div>Marketing Strategist</div>
-        <div class="d-flex gap-8 absolute-center">
-            <button class="filter-btn"><span data-text-wrap="">Slider</span></button>
-            <button class="filter-btn"><span data-text-wrap="">List</span></button>
-        </div>
-        <div class="w-min-120 d-flex-column gap-4 pos-absolute right-0">
-            <button class="d-flex gap-4 filter-btn"><span data-text-wrap>Work</span><span>(10)</span></button>
-            <button class="d-flex gap-4 filter-btn "><span data-text-wrap>Music</span><span>(07)</span></button>
-            <button class="d-flex gap-4 filter-btn "><span data-text-wrap>Collaborations</span><span>(05)</span></button>
-        </div>
-        <div>About</div>
-    </header>
-    <div class="wipe">
-        <div class="container-block"></div>
-        <div class="container-block"></div>
-       
-    </div>
-    <main class="page-content">
-        <div class="project-section h-screen d-flex-column padding-inline-12 justify-end padding-bottom-24 overflow-none">
-            
-            <div class="project-component d-flex-column">
-                <div class="splide" id="main">
-                    <div class="splide__track">
-                        <ul class="splide__list">
-                            <li class="splide__slide">
-                                <a href="" class="img-container">
-                                    <img src="/assets/images/Doja_Cat_RCA/Doja_Cat_Main.webp" alt="">
-                                </a>
-                            </li>
-                            <li class="splide__slide">
-                                <a href="" class="img-container">
-                                    <img src="/assets/images/Kenny_Mason_RCA/Kenny_Mason-1.jpg" alt="">
-                                </a>
-                            </li>
-                            <li class="splide__slide">
-                                <a href="" class="img-container">
-                                    <img src="/assets/images/Foushee_RCA/Copy of IMG_3892 copy.jpg" alt="">
-                                </a>
-                            </li>
-                            <li class="splide__slide">
-                                <a href="" class="img-container">
-                                    <img src="/assets/images/Lisa_RCA/Lisa_Main.webp" alt="">
-                                </a>
-                            </li>
-
-                            <li class="splide__slide">
-                                <a href="" class="img-container">
-                                    <img src="/assets/images/Gambino_RCA/Gambino_Main.JPG" alt="">
-                                </a>
-                            </li>
-
-                            <li class="splide__slide">
-                                <a href="" class="img-container">
-                                    <img src="/assets/images/Lucky_Daye_RCA/Lucky_Daye_Main.JPEG" alt="">
-                                </a>
-                            </li>
-
-                            <li class="splide__slide">
-                                <a href="" class="img-container">
-                                    <img src="/assets/images/Khalid_RCA/Khalid_Main.webp" alt="">
-                                </a>
-                            </li>
-
-                            <li class="splide__slide">
-                                <a href="" class="img-container">
-                                    <img src="/assets/images/Normani/Normani_Main.JPG" alt="">
-                                </a>
-                            </li>
-                        </ul>
+        <div class="d-none showreel container d-flex-column h-screen w-full bg-color overflow-none padding-80 pos-fixed z-max">
+            <div class="showreel-video-container">
+                <div class="pos-relative h-full">
+                    <video muted loop autoplay src="/RCA_Showreel.mp4"></video>
+          
+                    <div class="video-controls">
+                      <button id="reverse-btn" class="control-btn-secondary"><img src="/icons/refresh-reverse.svg" alt=""></button>
+                      <button class="control-btn-primary"><span>Enter Site</span></button>
+                      <button id="sound-btn" class="control-btn-secondary"><img src="/icons/pause-rounded.svg" alt=""></button>
                     </div>
-                </div>
+                  </div>
+            </div>
+        </div>
 
-                <div class="thumbs-container d-flex pos-relative padding-block-24 margin-top-48 w-full">
-                    <div class="tick-container-top w-full pos-absolute top-0 left-0"></div>
-                    <div class="tick-container-bottom w-full pos-absolute bottom-0 left-0"></div>
-                    <div class="splide" id="thumbs">
-                        <div class="splide__track">
-                            <ul class="splide__list">
-                                <li class="splide__slide">
-                                    <div class="title-container d-flex align-center justify-center">
-                                        <h3>Doja Cat</h3>
-                                    </div>
-                                </li>
-                                <li class="splide__slide">
-                                    <div class="title-container d-flex align-center justify-center">
-                                        <h3>Kenny Mason</h3>
-                                    </div>
-                                </li>
-                                <li class="splide__slide">
-                                    <div class="title-container d-flex align-center justify-center">
-                                        <h3>Foushee</h3>
-                                    </div>
-                                </li>
-                                <li class="splide__slide">
-                                    <div class="title-container d-flex align-center justify-center">
-                                        <h3>Lisa</h3>
-                                    </div>
-                                </li>
+        <div class="wipe">
+            <div class="container-block"></div>
+            <div class="container-block"></div>
+           
+        </div>
 
-                                <li class="splide__slide">
-                                    <div class="title-container d-flex align-center justify-center">
-                                        <h3>Gambino</h3>
-                                    </div>
-                                </li>
+        <div class="d-none about-overlay h-screen w-full pos-fixed top-0 inverse-bg z-max padding-top-100 grid-about padding-inline-20">
+        <button class="pos-absolute top-20 right-20 black capitalize">Close</button>
+        <div class="col-start-1 col-end-4">
+            <div class="font-size-48 black capitalize">Nick Anderson</div>
+        </div>
+        <div class="col-start-1 col-end-4 font-size-12 black capitalize h-fit d-flex-column gap-24">
+           <div>Creative Marketing Strategist based out of Los Angeles</div>
+           <div class="aspect-3-4">
+            <img src="/assets/images/Nick_Anderson_HS.jpg" alt="">
+           </div>
+        </div>
 
-                                <li class="splide__slide">
-                                    <div class="title-container d-flex align-center justify-center">
-                                        <h3>Lucky Daye</h3>
-                                    </div>
-                                </li>
+        <div class="col-start-5 col-end-8 font-size-12 black capitalize d-flex-column gap-24">
+            <div>Past Collaborations</div>
 
-                                <li class="splide__slide">
-                                    <div class="title-container d-flex align-center justify-center">
-                                        <h3>Khalid</h3>
-                                    </div>
-                                </li>
-
-                                <li class="splide__slide">
-                                    <div class="title-container d-flex align-center justify-center">
-                                        <h3>Normani</h3>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="pagination-label d-flex w-full justify-center align-center padding-bottom-20 font-size-11 margin-top-24">
-                    <div class="nav-controls d-flex justify-between pos-relative label-lg-font">
-                        <button class="nav-prev"><<</button>
-                        <div class="current">01</div>
-                        <div class="divider">//</div>
-                        <div class="total">05</div>
-
-                        <button class="nav-next">>></button>
-                        
-                    </div>
-                </div>
-                
+            <div class="d-flex-column gap-8">
+                <div>Artist:</div>
+                <div>Doja Cat, Kenny Mason, Childish Gambino Normani, Lucky Daye, Foushee, Lisa, Khalid</div>
             </div>
 
+            <div class="d-flex-column gap-8">
+                <div>Companies:</div>
+                <div>Capitol Records, Canon, JBL, Vogue, Def Jam, Republic Records, RCA Records</div>
+            </div>
+         </div>
+
+         <div class="col-start-9 col-end-12 font-size-12 black capitalize d-flex-column h-fit gap-24">
+
+            <div class="d-flex-column gap-8">
+                <div>Contact</div>
+                <div class="d-flex-column gap-4">
+                    <div>nickanderson.contact@gmail.com</div>
+                    <div>323.718.6242</div>
+                </div>
+            </div>
+
+            <div class="d-flex-column gap-8">
+                <ul class="d-flex gap-4">
+                    <li><a href="">LinkedIn</a></li><span>–</span>
+                    <li><a href="">Spotify</a></li><span>–</span>
+                    <li><a href="">Instagram</a></li>
+                </ul>
+            </div>
+         </div>
+
+         
+
+        
+      </div>
+
+    <div class="desktop-nav label-base z-max">
+        <a href="#" class="nav-item d-flex-column gap-4">
+          <span>Nick Anderson</span>
+          <span>Marketing Strategist</span>
+        </a>
+
+        <ul class=" view-toggle d-flex gap-12 h-fit absolute-center">
+            <li><button id="btn-slider">Slider</button></li>
+            <li><button id="btn-list">List</button></li>
+        </ul>
+
+        <div class="nav-container d-flex-column gap-8">
+            <ul class="d-flex justify-between">
+                <li><button>Work</button></li>
+                <li><a href="">About</a></li>
+            </ul>
+            <ul class="d-flex-column gap-4">
+                <li><button><div class="d-flex gap-8"><span>All Work</span><span>(10)</span></div></button></li>
+                <li><button><div class="d-flex gap-8"><span>Music</span><span>(10)</span></div></button></li>
+                <li><button><div class="d-flex gap-8"><span>Collaborations</span><span>(10)</span></div></button></li>
+            </ul>
         </div>
+      </div>
 
-    </main>
+      <div class="work-bg-img pos-absolute h-screen w-full z-0">
+        <img class="bg-img img-a" src="/assets/images/placeholder.jpg" alt="" />
+        <img class="bg-img img-b" src="" alt="" />
+      </div>
+      
+    <div id="sliderView" class="slider">
+        <ul class="slide-track">
 
-    <footer class="font-size-11 pos-fixed bottom-0 w-full d-flex justify-between padding-inline-20 padding-block-12">
+
+            <li > 
+                <div class="list-item-wrapper" data-cursor="Campaign Details">
+                    <a href="/foushee.html" class="slide">
+                        <div class="slide-image">
+                            <img src="/assets/images/Foushee_RCA/Foushee_Main.webp" alt="">
+                        </div>
+                        
+                        <div class="project-tag">
+                            <img src="/icons/view_eye_solid.svg" alt="" style="width: 12px; height: 12px;">
+                            <span>View Details</span>
+                        </div>
+                       
+                    </a>
+                    <div class="slide-info"><span>Foushee – Pointy Heights</span><span>2024</span></div>
+                </div>
+            </li>
+
+            <li>
+                <div class="list-item-wrapper">
+                    <a href="/normani.html" class="slide">
+                        <div class="slide-image">
+                            <img class="margin-top-100" src="/assets/images/Normani/Normani_1.JPEG" alt="">
+                        </div>
+
+                        <div class="project-tag">
+                            <img src="/icons/view_eye_solid.svg" alt="" style="width: 12px; height: 12px;">
+                            <span>View Details</span>
+                        </div>
+                    </a>
+                    <div class="slide-info"><span>Normani – Dopamine </span><span>2024</span></div>
+                </div>
+                
+            </li>
+
+            <li>
+                <div class="list-item-wrapper">
+                    <a href="/doja-cat.html" class="slide">
+                        <div class="slide-image">
+                            <img src="/assets/images/Doja_Cat_RCA/Doja_Cat_Main.webp" alt="">
+                        </div>
+
+                        <div class="project-tag">
+                            <img src="/icons/view_eye_solid.svg" alt="" style="width: 12px; height: 12px;">
+                            <span>View Details</span>
+                        </div>
+                    </a>
+                    <div class="slide-info"><span>Doja Cat – Scarlet</span><span>2022</span></div>
+                </div>
+            </li>
+
+            <li> <div class="list-item-wrapper">
+                <a href="/kenny-mason.html" class="slide">
+                    <div class="slide-image">
+                        <img src="/assets/images/Kenny_Mason_RCA/Kenny_Mason-1.jpg" alt="">
+                    </div>
+
+                    <div class="project-tag">
+                            <img src="/icons/view_eye_solid.svg" alt="" style="width: 12px; height: 12px;">
+                            <span>View Details</span>
+                        </div>
+                    </a>
+
+                    <div class="slide-info"><span>Kenny Mason – Angel Eyes</span><span>2022</span></div>
+            </div>
+            </li>
+
+            <li> <div class="list-item-wrapper">
+                <a href="/lisa.html" class="slide">
+                    <div class="slide-image">
+                        <img src="/assets/images/Lisa_RCA/Lisa_Main.webp" alt="">
+                    </div>
+
+                    <div class="project-tag">
+                            <img src="/icons/view_eye_solid.svg" alt="" style="width: 12px; height: 12px;">
+                            <span>View Details</span>
+                        </div>
+                    </a>
+                    <div class="slide-info"><span>Lisa – Alter Ego</span><span>2024</span></div>
+            </div>
+            </li>
+
+            <li> <div class="list-item-wrapper">
+                <a href="/khalid.html" class="slide">
+                    <div class="slide-image">
+                        <img src="/assets/images/Khalid_RCA/Khalid_Main.webp" alt="">
+                    </div>
+
+                    <div class="project-tag">
+                            <img src="/icons/view_eye_solid.svg" alt="" style="width: 12px; height: 12px;">
+                            <span>View Details</span>
+                        </div>
+                    </a>
+                    <div class="slide-info"><span>Khalid – Sincere </span><span>2024</span></div>
+            </div>
+            </li>
+
+            
+
+            
+        </ul>
+
+    </div>
+
+    <div id="listView" class="d-flex h-screen pos-relative padding-top-200 is-hidden">
+        <div class="work-list-container w-full">
+            <ul class="work-list-wrap d-flex-column gap-4">
+                <li class="list-item pos-relative w-full" data-img ="assets/images/Doja_Cat_RCA/Scarlet_BG.jpg">
+                    <a href="/doja-cat.html" class="list-item-container">
+                        <div class="col-1 d-flex gap-12">
+                            <span>01</span>
+                            <span>Scarlet</span>
+                        </div>
+                        <div class="col-2">Doja Cat</div>
+                        <div class="col-3">Creative Strategy</div>
+                        <div class="col-4">RCA Records</div>
+                        <div class="col-5 d-flex justify-between">
+                            <span>2022</span>
+                            <span>View Campaign</span>
+                        </div>
+                        
+                    </a>
+                    <div class="list-item-bg"></div>
+                </li>
+
+                <li class="list-item pos-relative w-full" data-img="assets/images/Kenny_Mason_RCA/IMG_6279 copy.webp">
+                    <a href="/kenny-mason.html" class="list-item-container">
+                        <div class="col-1 d-flex gap-12">
+                            <span>02</span>
+                            <span>Angel Eyes</span>
+                        </div>
+                        <div class="col-2">Kenny Mason</div>
+                        <div class="col-3">Creative Strategy</div>
+                        <div class="col-4">RCA Records</div>
+                        <div class="col-5 d-flex justify-between">
+                            <span>2022</span>
+                            <span>View Campaign</span>
+                        </div>
+                        
+                    </a>
+                    <div class="list-item-bg"></div>
+                </li>
+
+                <li class="list-item pos-relative w-full" data-img="assets/images/Normani/Normani_Main.JPEG">
+                    <a href="/normani.html" class="list-item-container">
+                        <div class="col-1 d-flex gap-12">
+                            <span>03</span>
+                            <span>Dopamine</span>
+                        </div>
+                        <div class="col-2">Normani</div>
+                        <div class="col-3">Creative Strategy</div>
+                        <div class="col-4">RCA Records</div>
+                        <div class="col-5 d-flex justify-between">
+                            <span>2022</span>
+                            <span>View Campaign</span>
+                        </div>
+                        
+                    </a>
+                    <div class="list-item-bg"></div>
+                </li>
+
+                <li class="list-item pos-relative w-full" data-img="assets/images/Khalid_RCA/IMG_2140.JPEG">
+                    <a href="/khalid.html" class="list-item-container">
+                        <div class="col-1 d-flex gap-12">
+                            <span>04</span>
+                            <span>Sincere</span>
+                        </div>
+                        <div class="col-2">Khalid</div>
+                        <div class="col-3">Creative Strategy</div>
+                        <div class="col-4">RCA Records</div>
+                        <div class="col-5 d-flex justify-between">
+                            <span>2022</span>
+                            <span>View Campaign</span>
+                        </div>
+                        
+                    </a>
+                    <div class="list-item-bg"></div>
+                </li>
+
+                <li class="list-item pos-relative w-full" data-img="assets/images/Foushee_RCA/Foushee_Main.webp">
+                    <a href="/foushee.html" class="list-item-container">
+                        <div class="col-1 d-flex gap-12">
+                            <span>05</span>
+                            <span>Pointy Heights</span>
+                        </div>
+                        <div class="col-2">Foushee</div>
+                        <div class="col-3">Creative Strategy</div>
+                        <div class="col-4">RCA Records</div>
+                        <div class="col-5 d-flex justify-between">
+                            <span>2022</span>
+                            <span>View Campaign</span>
+                        </div>
+                        
+                    </a>
+                    <div class="list-item-bg"></div>
+                </li>
+                <li class="list-item pos-relative w-full" data-img="assets/images/Lisa_RCA/Lisa_1.webp">
+                    <a href="/lisa.html" class="list-item-container">
+                        <div class="col-1 d-flex gap-12">
+                            <span>06</span>
+                            <span>Alter Ego</span>
+                        </div>
+                        <div class="col-2">Lisa</div>
+                        <div class="col-3">Creative Strategy</div>
+                        <div class="col-4">RCA Records</div>
+                        <div class="col-5 d-flex justify-between">
+                            <span>2022</span>
+                            <span>View Campaign</span>
+                        </div>
+                        
+                    </a>
+                    <div class="list-item-bg"></div>
+                </li>
+
+                <li class="list-item pos-relative w-full" data-img="assets/images/Gambino_RCA/IMG_2120.JPG">
+                    <a href="" class="list-item-container">
+                        <div class="col-1 d-flex gap-12">
+                            <span>02</span>
+                            <span>Bando Stone & The New World</span>
+                        </div>
+                        <div class="col-2">Childish Gambino</div>
+                        <div class="col-3">Creative Strategy</div>
+                        <div class="col-4">RCA Records</div>
+                        <div class="col-5 d-flex justify-between">
+                            <span>2022</span>
+                            <span>View Campaign</span>
+                        </div>
+                        
+                    </a>
+                    <div class="list-item-bg"></div>
+                </li>
+                <li class="list-item pos-relative w-full">
+                    <a href="" class="list-item-container">
+                        <div class="col-1 d-flex gap-12">
+                            <span>05</span>
+                            <span>Scarlet</span>
+                        </div>
+                        <div class="col-2">Doja Cat</div>
+                        <div class="col-3">Creative Strategy</div>
+                        <div class="col-4">RCA Records</div>
+                        <div class="col-5 d-flex justify-between">
+                            <span>2022</span>
+                            <span>View Campaign</span>
+                        </div>
+                        
+                    </a>
+                    <div class="list-item-bg"></div>
+                </li>
+                <li class="list-item pos-relative w-full">
+                    <a href="" class="list-item-container">
+                        <div class="col-1 d-flex gap-12">
+                            <span>06</span>
+                            <span>Scarlet</span>
+                        </div>
+                        <div class="col-2">Doja Cat</div>
+                        <div class="col-3">Creative Strategy</div>
+                        <div class="col-4">RCA Records</div>
+                        <div class="col-5 d-flex justify-between">
+                            <span>2022</span>
+                            <span>View Campaign</span>
+                        </div>
+                        
+                    </a>
+                    <div class="list-item-bg"></div>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+
+    <footer class="font-size-11 pos-fixed bottom-0 w-full d-flex justify-between padding-inline-20 padding-block-20">
         <div><span>&#169 2025 ByNickAnderson</span></div>
         <ul class="d-flex gap-8 absolute-center z-10">
             <li><a href="">LinkedIn</a></li>
@@ -191,111 +394,16 @@
     </footer>
 
 
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="/mainmain.js" defer></script>
     
-
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-  // Initialize the main Splide slider
-  const main = new Splide('#main', {
-    type: 'loop',
-    perPage: 5,
-    gap: 20,
-    focus: 'center',
-    speed: 800,
-    pagination: false,
-    arrows: false, // disable default arrows
-  });
-
-  // Initialize the thumbnail Splide slider
-  const thumbs = new Splide('#thumbs', {
-    type: 'loop',
-    perPage: 4,
-    gap: 80,
-    isNavigation: true,
-    focus: 'center',
-    speed: 800,
-    pagination: false,
-    arrows: false,
-  });
-
-  // Sync thumbnails with the main slider
-  main.sync(thumbs);
-
-  // Get the counter elements and nav buttons
-  const currentEl = document.querySelector('.pagination-label .current');
-  const totalEl = document.querySelector('.pagination-label .total');
-  const prevBtn = document.querySelector('.nav-prev');
-  const nextBtn = document.querySelector('.nav-next');
-
-  // Define function to update the counter
-  const updateCounter = () => {
-    const totalSlides = main.Components.Slides.getLength(true); // Excludes clones
-    const currentIndex = main.index % totalSlides; // Adjust for loop mode
-    const current = currentIndex + 1; // Human-readable index (1-based)
-
-    currentEl.textContent = String(current).padStart(2, '0');
-    totalEl.textContent = String(totalSlides).padStart(2, '0');
-  };
-
-  // Update on mount and slide change
-  main.on('mounted move', updateCounter);
-
-  // Attach your buttons to Splide controls
-  prevBtn.addEventListener('click', () => main.go('<'));
-  nextBtn.addEventListener('click', () => main.go('>'));
-
-  // Mount both sliders
-  main.mount();
-  thumbs.mount();
-});
-
-
-
-
-    function createRulerTicks() {
-  const topContainer = document.querySelector('.tick-container-top');
-  const bottomContainer = document.querySelector('.tick-container-bottom');
-
-  // Clear previous ticks
-  topContainer.innerHTML = '';
-  bottomContainer.innerHTML = '';
-
-  const containerWidth = topContainer.offsetWidth;
-  const tickSpacing = 4; // pixels between ticks
-  const totalTicks = Math.floor(containerWidth / tickSpacing);
-
-  for (let i = 0; i <= totalTicks; i++) {
-    const tickTop = document.createElement('div');
-    const tickBottom = document.createElement('div');
-
-    tickTop.classList.add('tick');
-    tickBottom.classList.add('tick');
-
-    // Every 5th tick is longer
-    if (i % 5 === 0) {
-      tickTop.classList.add('long');
-      tickBottom.classList.add('long');
-    } else {
-      tickTop.classList.add('short');
-      tickBottom.classList.add('short');
-    }
-
-    topContainer.appendChild(tickTop);
-    bottomContainer.appendChild(tickBottom);
-  }
-}
-
-// Run on load and resize
-window.addEventListener('DOMContentLoaded', createRulerTicks);
-window.addEventListener('resize', createRulerTicks);
-
-</script>
-
-
-<script src="/transition.js"></script>
-<script src="/main.js" defer></script>
+   
+   
+    
+ 
+    
+    
+    
+    
 </body>
 </html>
