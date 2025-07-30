@@ -225,9 +225,10 @@ const preloadHoverImages = () => {
 preloadHoverImages();
 
 
-    // === Hover Image Swap ===
+// === Hover Image Swap (Optimized with Preload) ===
 const imgA = document.querySelector('.img-a');
 const imgB = document.querySelector('.img-b');
+
 if (imgA && imgB) {
   let isImgAActive = true;
   const listItems = document.querySelectorAll('.list-item');
@@ -239,14 +240,12 @@ if (imgA && imgB) {
       if (!imageUrl) return;
 
       const imgToShow = isImgAActive ? imgB : imgA;
-
-      imgToShow.onload = () => {
-        imgToShow.classList.add('active');
-        (isImgAActive ? imgA : imgB).classList.remove('active');
-        isImgAActive = !isImgAActive;
-      };
-
       imgToShow.src = imageUrl;
+
+      // Immediately swap visibility (browser will use cached image if preloaded)
+      imgToShow.classList.add('active');
+      (isImgAActive ? imgA : imgB).classList.remove('active');
+      isImgAActive = !isImgAActive;
     });
 
     item.addEventListener('mouseleave', () => {
@@ -257,6 +256,7 @@ if (imgA && imgB) {
 } else {
   console.warn("Hover images missing");
 }
+
 
 
     // === Infinite Scroll Carousel with Parallax ===
