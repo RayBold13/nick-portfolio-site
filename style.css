@@ -407,6 +407,7 @@ p{
 .h-full   { height: 100%; }
 .h-fit    { height: fit-content;}
 .h-screen { height: 100vh; }
+.h-dvh{height: 100dvh;}
 .h-min    { min-height: 100vh; }
 .h-2-screen{height: 200vh;}
 
@@ -706,7 +707,6 @@ p{
 .z-top   { z-index: 2147483647; } /* max safe integer for z-index */
 
 /* ========== Opacity Utilities ========== */
-.opacity-50{opacity: .5 ;}
 
 
 /* ========== Alignment Utilities ========== */
@@ -1359,7 +1359,10 @@ body:has([data-cursor]:hover) .cursor {
 
   @media (max-width:700px) {
     .nav-container{
+        display: flex;
+        gap: 8px;
         width: fit-content;
+        
     }
     
   }
