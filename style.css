@@ -447,8 +447,25 @@ p{
     .md\:d-flex{
         display:flex;
     }
+
+    
     
 }
+
+@media (max-width:635px) {
+    .sm\:d-none{
+        display: none;
+    }
+    
+}
+
+@media (min-width:635px) {
+    .md\:d-none{
+        display: none;
+    }
+    
+}
+
 
 
 /* ========== Grid ========== */
@@ -688,6 +705,9 @@ p{
 .z-max   { z-index: 9999; }
 .z-top   { z-index: 2147483647; } /* max safe integer for z-index */
 
+/* ========== Opacity Utilities ========== */
+.opacity-50{opacity: .5 ;}
+
 
 /* ========== Alignment Utilities ========== */
 .align-start    { align-items: flex-start; }
@@ -866,7 +886,7 @@ body:has([data-cursor]:hover) .cursor {
 }
 
 .label-text-wrap{
-    text-wrap: nowrap;
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     width: 100%;
@@ -1001,6 +1021,50 @@ body:has([data-cursor]:hover) .cursor {
     height: calc(100% - 16px);
 }
 
+.list-item-block-wrap{
+    width: 100%;
+}
+
+.list-item-block-wrap:hover .list-item-bg{
+    height: calc(100% - 16px);
+}
+
+.list-item-block-wrap:hover .list-item-block{
+    color: #000000;
+}
+
+@media (max-width:650px) {
+    .list-item-block-wrap:hover .list-item-block{
+        color: #ffffff;
+    }
+
+    .list-item-block{
+        opacity: .5;
+    }
+
+    .is-active{
+        opacity: 1;
+    }
+
+    .opacity-50{opacity: .5;}
+    
+}
+
+@media (max-width: 650px) {
+    .list-item.is-active .bg-img {
+      opacity: 1;
+      transform: scale(1); /* or whatever hover transform you use */
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+  
+    .list-item .list-item-bg {
+      opacity: 0;
+      transform: scale(1.05); /* optional */
+      pointer-events: none;
+    }
+  }
+  
+
 .list-item:hover .list-item-container{
     color: #000000;
 }
@@ -1020,12 +1084,38 @@ body:has([data-cursor]:hover) .cursor {
 .list-item-bg{
     background-color: rgb(255, 255, 255);
     position: absolute;
-    z-index: 0;
+    z-index: -1;
     height: 0%;
     width: 100%;
     top: 50%;
     transform: translateY(-50%);
     transition: .32s ease;
+}
+
+.list-item-block{
+    display: flex;
+    width: 100vw;
+    font-size: 11px;
+    
+}
+
+.list-view-bg-img{
+    height: 400px;
+    width: 300px;
+    z-index: -1;
+    opacity: .50;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mobile-inactive{
+    opacity: .5;
+}
+
+.mobile-active{
+    opacity: 1;
 }
 
 

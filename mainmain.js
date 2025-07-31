@@ -168,9 +168,18 @@ document.addEventListener('DOMContentLoaded', () => {
           btnSlider.classList.remove("is-active");
           listView.classList.remove("is-hidden");
           sliderView.classList.add("is-hidden");
+      
           animateListItemsIn();
+      
+          // 👇 Reveal mobile background image after transition if on mobile
+          if (window.innerWidth <= 650) {
+            setTimeout(() => {
+              setMobileActiveImage();
+            }, 500); // wait slightly after list animation
+          }
         });
       });
+      
     } else {
       console.warn("Toggle or view elements missing");
     }
@@ -210,61 +219,75 @@ document.addEventListener('DOMContentLoaded', () => {
       }, ">-0.8");
     });
 
-// === Preload Hover Images ===
-const preloadHoverImages = () => {
-  const listItems = document.querySelectorAll('.list-item');
-  listItems.forEach(item => {
-    const imageUrl = item.getAttribute('data-img');
-    if (imageUrl) {
-      const img = new Image();
-      img.src = imageUrl;
+    function preloadHoverImages() {
+      const listItems = document.querySelectorAll('.list-item');
+      listItems.forEach(item => {
+        const imageUrl = item.getAttribute('data-img');
+        if (imageUrl) {
+          const img = new Image();
+          img.src = imageUrl;
+        }
+      });
     }
-  });
-};
-
-preloadHoverImages();
-
-// === Hover Image Swap (Single Image Approach) ===
-const bgImg = document.querySelector('.bg-img');
-const listItems = document.querySelectorAll('.list-item');
-
-if (bgImg && listItems.length) {
-  let preloadCache = {};
-
-  // Preload hover images
-  listItems.forEach(item => {
-    const imageUrl = item.getAttribute('data-img');
-    if (imageUrl) {
-      const img = new Image();
-      img.src = imageUrl;
-      preloadCache[imageUrl] = img;
-    }
-  });
-
-  listItems.forEach(item => {
-    const imageUrl = item.getAttribute('data-img');
-
-    item.addEventListener('mouseenter', () => {
-      if (!imageUrl || bgImg.src.includes(imageUrl)) return;
-
-      // Hide current image to start transition
-      bgImg.classList.remove('active');
-
-      setTimeout(() => {
+    
+    function setMobileActiveImage() {
+      const bgImg = document.querySelector('.bg-img');
+      const activeItem = document.querySelector('.list-item.is-active');
+    
+      if (!bgImg || !activeItem) return;
+    
+      const imageUrl = activeItem.getAttribute('data-img');
+      if (imageUrl) {
         bgImg.src = imageUrl;
         requestAnimationFrame(() => {
           bgImg.classList.add('active');
         });
-      }, 200); // delay before switching image and fading back in
-    });
-
-    item.addEventListener('mouseleave', () => {
-      bgImg.classList.remove('active');
-    });
-  });
-} else {
-  console.warn("Single hover image or list items missing");
-}
+      }
+    }
+    
+    // Call preload once on load
+    preloadHoverImages();
+    
+    // Setup hover image behavior
+    const bgImg = document.querySelector('.bg-img');
+    const listItems = document.querySelectorAll('.list-item');
+    
+    if (bgImg && listItems.length) {
+      let preloadCache = {};
+    
+      listItems.forEach(item => {
+        const imageUrl = item.getAttribute('data-img');
+        if (imageUrl) {
+          const img = new Image();
+          img.src = imageUrl;
+          preloadCache[imageUrl] = img;
+        }
+      });
+    
+      listItems.forEach(item => {
+        const imageUrl = item.getAttribute('data-img');
+    
+        item.addEventListener('mouseenter', () => {
+          if (!imageUrl || bgImg.src.includes(imageUrl)) return;
+    
+          bgImg.classList.remove('active');
+    
+          setTimeout(() => {
+            bgImg.src = imageUrl;
+            requestAnimationFrame(() => {
+              bgImg.classList.add('active');
+            });
+          }, 300);
+        });
+    
+        item.addEventListener('mouseleave', () => {
+          bgImg.classList.remove('active');
+        });
+      });
+    } else {
+      console.warn("Single hover image or list items missing");
+    }
+    
 
 
 
@@ -486,6 +509,19 @@ const config = {
     }
 
     initializeSlider();
+
+    document.querySelectorAll('a[data-disable-on-mobile]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        if (window.innerWidth <= 650) {
+          e.preventDefault();       // Stop the browser from following the link
+          e.stopImmediatePropagation(); // Stop other JS listeners (like Barba or custom nav)
+          console.log('Link blocked on mobile');
+        }
+      });
+    });
+    
+
+    
   }
 
   // Run entry transition, then initialize main, then add navigation listeners

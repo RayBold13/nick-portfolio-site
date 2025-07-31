@@ -91,8 +91,8 @@
         </ul>
 
         <div class="nav-container d-flex-column gap-8">
-            <ul class="d-flex justify-between">
-                <li><button>Work</button></li>
+            <ul class="d-flex justify-between">              
+                <li><a href="#">Work</a></li>
                 <li><a href="">About</a></li>
             </ul>
             <ul class="d-flex-column gap-4">
@@ -103,7 +103,7 @@
         </div>
       </div>
 
-      <div class="work-bg-img pos-absolute h-screen w-full z-0">
+      <div class="work-bg-img pos-absolute h-screen w-full z-0 opacity-50">
         <img class="bg-img" src="" alt="" />
       </div>
       
@@ -115,7 +115,7 @@
                 <div class="list-item-wrapper" data-cursor="Campaign Details">
                     <a href="/foushee.html" class="slide">
                         <div class="slide-image">
-                            <img src="/assets/images/Foushee_RCA/Foushee_Main.webp" alt="">
+                            <img src="/assets/images/foushee/foushee_slide_view.webp">
                         </div>
                         
                         <div class="project-tag">
@@ -132,7 +132,7 @@
                 <div class="list-item-wrapper">
                     <a href="/normani.html" class="slide">
                         <div class="slide-image">
-                            <img class="margin-top-100" src="/assets/images/Normani/Normani_1.JPEG" alt="">
+                            <img class="margin-top-100" src="/assets/images/normani/normani_slider_view.jpg">
                         </div>
 
                         <div class="project-tag">
@@ -149,7 +149,7 @@
                 <div class="list-item-wrapper">
                     <a href="/doja-cat.html" class="slide">
                         <div class="slide-image">
-                            <img src="/assets/images/Doja_Cat_RCA/Doja_Cat_Main.webp" alt="">
+                            <img class="margin-top-100" src="/assets/images/doja_cat/doja_cat_slide_view.webp" alt="">
                         </div>
 
                         <div class="project-tag">
@@ -164,7 +164,7 @@
             <li> <div class="list-item-wrapper">
                 <a href="/kenny-mason.html" class="slide">
                     <div class="slide-image">
-                        <img src="/assets/images/Kenny_Mason_RCA/Kenny_Mason-1.jpg" alt="">
+                        <img class="margin-top-100" src="/assets/images/kenny_mason/kenny_mason_slide_view.jpg" alt="">
                     </div>
 
                     <div class="project-tag">
@@ -180,7 +180,22 @@
             <li> <div class="list-item-wrapper">
                 <a href="/lisa.html" class="slide">
                     <div class="slide-image">
-                        <img src="/assets/images/Lisa_RCA/Lisa_Main.webp" alt="">
+                        <img class="margin-top-100" src="/assets/images/gambino/gambino_slide_view.jpg" alt="">
+                    </div>
+
+                    <div class="project-tag">
+                            <img src="/icons/view_eye_solid.svg" alt="" style="width: 12px; height: 12px;">
+                            <span>View Details</span>
+                        </div>
+                    </a>
+                    <div class="slide-info"><span>Gambino – Bando Stone & The New World</span><span>2024</span></div>
+            </div>
+            </li>
+
+            <li> <div class="list-item-wrapper">
+                <a href="/lisa.html" class="slide">
+                    <div class="slide-image">
+                        <img class="margin-top-100" src="/assets/images/Lisa_RCA/Lisa_Main.webp" alt="">
                     </div>
 
                     <div class="project-tag">
@@ -195,7 +210,7 @@
             <li> <div class="list-item-wrapper">
                 <a href="/khalid.html" class="slide">
                     <div class="slide-image">
-                        <img src="/assets/images/Khalid_RCA/Khalid_Main.webp" alt="">
+                        <img src="/assets/images/khalid/khalid_slide_view.webp" alt="">
                     </div>
 
                     <div class="project-tag">
@@ -204,6 +219,21 @@
                         </div>
                     </a>
                     <div class="slide-info"><span>Khalid – Sincere </span><span>2024</span></div>
+            </div>
+            </li>
+
+            <li> <div class="list-item-wrapper">
+                <a href="/khalid.html" class="slide">
+                    <div class="slide-image">
+                        <img class="margin-top-40" src="/assets/images/lucky_daye/lucky_daye_slide_view.jpg" alt="">
+                    </div>
+
+                    <div class="project-tag">
+                            <img src="/icons/view_eye_solid.svg" alt="" style="width: 12px; height: 12px;">
+                            <span>View Details</span>
+                        </div>
+                    </a>
+                    <div class="slide-info"><span>Lucky Daye – Sincere </span><span>2024</span></div>
             </div>
             </li>
 
@@ -217,166 +247,189 @@
     <div id="listView" class="d-flex h-screen pos-relative padding-top-200 is-hidden">
         <div class="work-list-container w-full">
             <ul class="work-list-wrap d-flex-column gap-4">
-                <li class="list-item pos-relative w-full" data-img ="assets/images/doja_cat/scarlet_list_view.webp">
-                    <a href="/doja-cat.html" class="list-item-container">
-                        <div class="col-1 d-flex gap-12">
-                            <span>01</span>
-                            <span>Scarlet</span>
-                        </div>
-                        <div class="col-2">Doja Cat</div>
-                        <div class="col-3">Creative Strategy</div>
-                        <div class="col-4">RCA Records</div>
-                        <div class="col-5 d-flex justify-between">
-                            <span>2022</span>
-                            <span>View Campaign</span>
-                        </div>
-                        
+                
+                <li class="list-item is-active list-item-block-wrap pos-relative d-flex w-full" data-img="assets/images/doja_cat/scarlet_list_view.webp">
+                    <a class="list-item-block d-flex w-full is-active" href="/doja-cat.html" data-disable-on-mobile="true">
+                        <div class="flex-1 d-flex padding-inline-20 padding-block-8">
+                            <div class="d-flex gap-8 sm:d-none"><span>01</span><span>Scarlet</span></div>
+                            <button class="d-flex-column md:d-none mobile-active"><div class="nowrap">Scarlet By Doja Cat</div><div>(RCA Records)</div></button> 
+                            </div>
+                        <div class="flex-1 padding-block-8 sm:d-none">Doja Cat</div>
+                        <div class="flex-1 padding-block-8 sm:d-none">Creative Strategy</div>
+                        <div class="flex-1 padding-block-8 sm:d-none">RCA Records</div>
+                        <div class="flex-1 padding-block-8 padding-inline-20"><div class="d-flex justify-between"><span class="sm:d-none">2022</span><span class="sm:d-none">View Campaign</span></div></div>
                     </a>
-                    <div class="list-item-bg"></div>
+                        
+                    <a class="md:d-none padding-inline-20 padding-block-8" href=""><span class="nowrap font-size-11">View Campaign</span></a>
+                    <div class="list-item-bg sm:d-none"></div>
                 </li>
 
-                <li class="list-item pos-relative w-full" data-img="assets/images/kenny_mason/kenny_list_view.webp">
-                    <a href="/kenny-mason.html" class="list-item-container">
-                        <div class="col-1 d-flex gap-12">
-                            <span>02</span>
-                            <span>Angel Eyes</span>
-                        </div>
-                        <div class="col-2">Kenny Mason</div>
-                        <div class="col-3">Creative Strategy</div>
-                        <div class="col-4">RCA Records</div>
-                        <div class="col-5 d-flex justify-between">
-                            <span>2022</span>
-                            <span>View Campaign</span>
-                        </div>
-                        
+                <li class="list-item list-item-block-wrap pos-relative d-flex w-full" data-img="assets/images/kenny_mason/kenny_list_view.webp">
+                    <a class="list-item-block d-flex w-full" href="/doja-cat.html" data-disable-on-mobile="true">
+                        <div class="flex-1 d-flex padding-inline-20 padding-block-8">
+                            <div class="d-flex gap-8 sm:d-none"><span>01</span><span>Scarlet</span></div>
+                            <button class="d-flex-column md:d-none mobile-active"><div class="nowrap">Scarlet By Doja Cat</div><div>(RCA Records)</div></button> 
+                            </div>
+                        <div class="flex-1 padding-block-8 sm:d-none">Doja Cat</div>
+                        <div class="flex-1 padding-block-8 sm:d-none">Creative Strategy</div>
+                        <div class="flex-1 padding-block-8 sm:d-none">RCA Records</div>
+                        <div class="flex-1 padding-block-8 padding-inline-20"><div class="d-flex justify-between"><span class="sm:d-none">2022</span><span class="sm:d-none">View Campaign</span></div></div>
                     </a>
-                    <div class="list-item-bg"></div>
+                        
+                    <a class="md:d-none padding-inline-20 padding-block-8" href=""><span class="nowrap font-size-11">View Campaign</span></a>
+                    <div class="list-item-bg sm:d-none"></div>
                 </li>
 
-                <li class="list-item pos-relative w-full" data-img="assets/images/normani/normain_list_view.jpg">
-                    <a href="/normani.html" class="list-item-container">
-                        <div class="col-1 d-flex gap-12">
-                            <span>03</span>
-                            <span>Dopamine</span>
-                        </div>
-                        <div class="col-2">Normani</div>
-                        <div class="col-3">Creative Strategy</div>
-                        <div class="col-4">RCA Records</div>
-                        <div class="col-5 d-flex justify-between">
-                            <span>2022</span>
-                            <span>View Campaign</span>
-                        </div>
-                        
+                <li class="list-item list-item-block-wrap pos-relative d-flex w-full" data-img="assets/images/kenny_mason/kenny_list_view.webp">
+                    <a class="list-item-block d-flex w-full" href="/doja-cat.html" data-disable-on-mobile="true">
+                        <div class="flex-1 d-flex padding-inline-20 padding-block-8">
+                            <div class="d-flex gap-8 sm:d-none"><span>01</span><span>Scarlet</span></div>
+                            <button class="d-flex-column md:d-none mobile-active"><div class="nowrap">Scarlet By Doja Cat</div><div>(RCA Records)</div></button> 
+                            </div>
+                        <div class="flex-1 padding-block-8 sm:d-none">Doja Cat</div>
+                        <div class="flex-1 padding-block-8 sm:d-none">Creative Strategy</div>
+                        <div class="flex-1 padding-block-8 sm:d-none">RCA Records</div>
+                        <div class="flex-1 padding-block-8 padding-inline-20"><div class="d-flex justify-between"><span class="sm:d-none">2022</span><span class="sm:d-none">View Campaign</span></div></div>
                     </a>
-                    <div class="list-item-bg"></div>
+                        
+                    <a class="md:d-none padding-inline-20 padding-block-8" href=""><span class="nowrap font-size-11">View Campaign</span></a>
+                    <div class="list-item-bg sm:d-none"></div>
                 </li>
 
-                <li class="list-item pos-relative w-full" data-img="assets/images/khalid/khalid_list_view.jpg">
-                    <a href="/khalid.html" class="list-item-container">
-                        <div class="col-1 d-flex gap-12">
-                            <span>04</span>
-                            <span>Sincere</span>
-                        </div>
-                        <div class="col-2">Khalid</div>
-                        <div class="col-3">Creative Strategy</div>
-                        <div class="col-4">RCA Records</div>
-                        <div class="col-5 d-flex justify-between">
-                            <span>2022</span>
-                            <span>View Campaign</span>
-                        </div>
-                        
+                <li class="list-item list-item-block-wrap pos-relative d-flex w-full" data-img="assets/images/kenny_mason/kenny_list_view.webp">
+                    <a class="list-item-block d-flex w-full" href="/doja-cat.html" data-disable-on-mobile="true">
+                        <div class="flex-1 d-flex padding-inline-20 padding-block-8">
+                            <div class="d-flex gap-8 sm:d-none"><span>01</span><span>Scarlet</span></div>
+                            <button class="d-flex-column md:d-none mobile-active"><div class="nowrap">Scarlet By Doja Cat</div><div>(RCA Records)</div></button> 
+                            </div>
+                        <div class="flex-1 padding-block-8 sm:d-none">Doja Cat</div>
+                        <div class="flex-1 padding-block-8 sm:d-none">Creative Strategy</div>
+                        <div class="flex-1 padding-block-8 sm:d-none">RCA Records</div>
+                        <div class="flex-1 padding-block-8 padding-inline-20"><div class="d-flex justify-between"><span class="sm:d-none">2022</span><span class="sm:d-none">View Campaign</span></div></div>
                     </a>
-                    <div class="list-item-bg"></div>
+                        
+                    <a class="md:d-none padding-inline-20 padding-block-8" href=""><span class="nowrap font-size-11">View Campaign</span></a>
+                    <div class="list-item-bg sm:d-none"></div>
                 </li>
 
-                <li class="list-item pos-relative w-full" data-img="assets/images/foushee/foushee_list_view.webp">
-                    <a href="/foushee.html" class="list-item-container">
-                        <div class="col-1 d-flex gap-12">
-                            <span>05</span>
-                            <span>Pointy Heights</span>
-                        </div>
-                        <div class="col-2">Foushee</div>
-                        <div class="col-3">Creative Strategy</div>
-                        <div class="col-4">RCA Records</div>
-                        <div class="col-5 d-flex justify-between">
-                            <span>2022</span>
-                            <span>View Campaign</span>
-                        </div>
-                        
+                <li class="list-item list-item-block-wrap pos-relative d-flex w-full" data-img="assets/images/kenny_mason/kenny_list_view.webp">
+                    <a class="list-item-block d-flex w-full" href="/doja-cat.html" data-disable-on-mobile="true">
+                        <div class="flex-1 d-flex padding-inline-20 padding-block-8">
+                            <div class="d-flex gap-8 sm:d-none"><span>01</span><span>Scarlet</span></div>
+                            <button class="d-flex-column md:d-none mobile-active"><div class="nowrap">Scarlet By Doja Cat</div><div>(RCA Records)</div></button> 
+                            </div>
+                        <div class="flex-1 padding-block-8 sm:d-none">Doja Cat</div>
+                        <div class="flex-1 padding-block-8 sm:d-none">Creative Strategy</div>
+                        <div class="flex-1 padding-block-8 sm:d-none">RCA Records</div>
+                        <div class="flex-1 padding-block-8 padding-inline-20"><div class="d-flex justify-between"><span class="sm:d-none">2022</span><span class="sm:d-none">View Campaign</span></div></div>
                     </a>
-                    <div class="list-item-bg"></div>
-                </li>
-                <li class="list-item pos-relative w-full" data-img="assets/images/Lisa_RCA/Lisa_1.webp">
-                    <a href="/lisa.html" class="list-item-container">
-                        <div class="col-1 d-flex gap-12">
-                            <span>06</span>
-                            <span>Alter Ego</span>
-                        </div>
-                        <div class="col-2">Lisa</div>
-                        <div class="col-3">Creative Strategy</div>
-                        <div class="col-4">RCA Records</div>
-                        <div class="col-5 d-flex justify-between">
-                            <span>2022</span>
-                            <span>View Campaign</span>
-                        </div>
                         
-                    </a>
-                    <div class="list-item-bg"></div>
+                    <a class="md:d-none padding-inline-20 padding-block-8" href=""><span class="nowrap font-size-11">View Campaign</span></a>
+                    <div class="list-item-bg sm:d-none"></div>
                 </li>
 
-                <li class="list-item pos-relative w-full" data-img="assets/images/Gambino_RCA/IMG_2120.JPG">
-                    <a href="" class="list-item-container">
-                        <div class="col-1 d-flex gap-12">
-                            <span>02</span>
-                            <span>Bando Stone & The New World</span>
-                        </div>
-                        <div class="col-2">Childish Gambino</div>
-                        <div class="col-3">Creative Strategy</div>
-                        <div class="col-4">RCA Records</div>
-                        <div class="col-5 d-flex justify-between">
-                            <span>2022</span>
-                            <span>View Campaign</span>
-                        </div>
-                        
+                <li class="list-item list-item-block-wrap pos-relative d-flex w-full" data-img="assets/images/kenny_mason/kenny_list_view.webp">
+                    <a class="list-item-block d-flex w-full" href="/doja-cat.html" data-disable-on-mobile="true">
+                        <div class="flex-1 d-flex padding-inline-20 padding-block-8">
+                            <div class="d-flex gap-8 sm:d-none"><span>01</span><span>Scarlet</span></div>
+                            <button class="d-flex-column md:d-none mobile-active"><div class="nowrap">Scarlet By Doja Cat</div><div>(RCA Records)</div></button> 
+                            </div>
+                        <div class="flex-1 padding-block-8 sm:d-none">Doja Cat</div>
+                        <div class="flex-1 padding-block-8 sm:d-none">Creative Strategy</div>
+                        <div class="flex-1 padding-block-8 sm:d-none">RCA Records</div>
+                        <div class="flex-1 padding-block-8 padding-inline-20"><div class="d-flex justify-between"><span class="sm:d-none">2022</span><span class="sm:d-none">View Campaign</span></div></div>
                     </a>
-                    <div class="list-item-bg"></div>
-                </li>
-                <li class="list-item pos-relative w-full">
-                    <a href="" class="list-item-container">
-                        <div class="col-1 d-flex gap-12">
-                            <span>05</span>
-                            <span>Scarlet</span>
-                        </div>
-                        <div class="col-2">Doja Cat</div>
-                        <div class="col-3">Creative Strategy</div>
-                        <div class="col-4">RCA Records</div>
-                        <div class="col-5 d-flex justify-between">
-                            <span>2022</span>
-                            <span>View Campaign</span>
-                        </div>
                         
-                    </a>
-                    <div class="list-item-bg"></div>
+                    <a class="md:d-none padding-inline-20 padding-block-8" href=""><span class="nowrap font-size-11">View Campaign</span></a>
+                    <div class="list-item-bg sm:d-none"></div>
                 </li>
-                <li class="list-item pos-relative w-full">
-                    <a href="" class="list-item-container">
-                        <div class="col-1 d-flex gap-12">
-                            <span>06</span>
-                            <span>Scarlet</span>
-                        </div>
-                        <div class="col-2">Doja Cat</div>
-                        <div class="col-3">Creative Strategy</div>
-                        <div class="col-4">RCA Records</div>
-                        <div class="col-5 d-flex justify-between">
-                            <span>2022</span>
-                            <span>View Campaign</span>
-                        </div>
+
+                <li class="list-item list-item-block-wrap pos-relative d-flex w-full" data-img="assets/images/kenny_mason/kenny_list_view.webp">
+                    <a class="list-item-block d-flex w-full" href="/doja-cat.html" data-disable-on-mobile="true">
+                        <div class="flex-1 d-flex padding-inline-20 padding-block-8">
+                            <div class="d-flex gap-8 sm:d-none"><span>01</span><span>Scarlet</span></div>
+                            <button class="d-flex-column md:d-none mobile-active"><div class="nowrap">Scarlet By Doja Cat</div><div>(RCA Records)</div></button> 
+                            </div>
+                        <div class="flex-1 padding-block-8 sm:d-none">Doja Cat</div>
+                        <div class="flex-1 padding-block-8 sm:d-none">Creative Strategy</div>
+                        <div class="flex-1 padding-block-8 sm:d-none">RCA Records</div>
+                        <div class="flex-1 padding-block-8 padding-inline-20"><div class="d-flex justify-between"><span class="sm:d-none">2022</span><span class="sm:d-none">View Campaign</span></div></div>
+                    </a>
                         
-                    </a>
-                    <div class="list-item-bg"></div>
+                    <a class="md:d-none padding-inline-20 padding-block-8" href=""><span class="nowrap font-size-11">View Campaign</span></a>
+                    <div class="list-item-bg sm:d-none"></div>
                 </li>
+
+                <li class="list-item list-item-block-wrap pos-relative d-flex w-full" data-img="assets/images/kenny_mason/kenny_list_view.webp">
+                    <a class="list-item-block d-flex w-full" href="/doja-cat.html" data-disable-on-mobile="true">
+                        <div class="flex-1 d-flex padding-inline-20 padding-block-8">
+                            <div class="d-flex gap-8 sm:d-none"><span>01</span><span>Scarlet</span></div>
+                            <button class="d-flex-column md:d-none mobile-active"><div class="nowrap">Scarlet By Doja Cat</div><div>(RCA Records)</div></button> 
+                            </div>
+                        <div class="flex-1 padding-block-8 sm:d-none">Doja Cat</div>
+                        <div class="flex-1 padding-block-8 sm:d-none">Creative Strategy</div>
+                        <div class="flex-1 padding-block-8 sm:d-none">RCA Records</div>
+                        <div class="flex-1 padding-block-8 padding-inline-20"><div class="d-flex justify-between"><span class="sm:d-none">2022</span><span class="sm:d-none">View Campaign</span></div></div>
+                    </a>
+                        
+                    <a class="md:d-none padding-inline-20 padding-block-8" href=""><span class="nowrap font-size-11">View Campaign</span></a>
+                    <div class="list-item-bg sm:d-none"></div>
+                </li>
+
+                <li class="list-item list-item-block-wrap pos-relative d-flex w-full" data-img="assets/images/kenny_mason/kenny_list_view.webp">
+                    <a class="list-item-block d-flex w-full" href="/doja-cat.html" data-disable-on-mobile="true">
+                        <div class="flex-1 d-flex padding-inline-20 padding-block-8">
+                            <div class="d-flex gap-8 sm:d-none"><span>01</span><span>Scarlet</span></div>
+                            <button class="d-flex-column md:d-none mobile-active"><div class="nowrap">Scarlet By Doja Cat</div><div>(RCA Records)</div></button> 
+                            </div>
+                        <div class="flex-1 padding-block-8 sm:d-none">Doja Cat</div>
+                        <div class="flex-1 padding-block-8 sm:d-none">Creative Strategy</div>
+                        <div class="flex-1 padding-block-8 sm:d-none">RCA Records</div>
+                        <div class="flex-1 padding-block-8 padding-inline-20"><div class="d-flex justify-between"><span class="sm:d-none">2022</span><span class="sm:d-none">View Campaign</span></div></div>
+                    </a>
+                        
+                    <a class="md:d-none padding-inline-20 padding-block-8" href=""><span class="nowrap font-size-11">View Campaign</span></a>
+                    <div class="list-item-bg sm:d-none"></div>
+                </li>
+
+                <li class="list-item list-item-block-wrap pos-relative d-flex w-full" data-img="assets/images/kenny_mason/kenny_list_view.webp">
+                    <a class="list-item-block d-flex w-full" href="/doja-cat.html" data-disable-on-mobile="true">
+                        <div class="flex-1 d-flex padding-inline-20 padding-block-8">
+                            <div class="d-flex gap-8 sm:d-none"><span>01</span><span>Scarlet</span></div>
+                            <button class="d-flex-column md:d-none mobile-active"><div class="nowrap">Scarlet By Doja Cat</div><div>(RCA Records)</div></button> 
+                            </div>
+                        <div class="flex-1 padding-block-8 sm:d-none">Doja Cat</div>
+                        <div class="flex-1 padding-block-8 sm:d-none">Creative Strategy</div>
+                        <div class="flex-1 padding-block-8 sm:d-none">RCA Records</div>
+                        <div class="flex-1 padding-block-8 padding-inline-20"><div class="d-flex justify-between"><span class="sm:d-none">2022</span><span class="sm:d-none">View Campaign</span></div></div>
+                    </a>
+                        
+                    <a class="md:d-none padding-inline-20 padding-block-8" href=""><span class="nowrap font-size-11">View Campaign</span></a>
+                    <div class="list-item-bg sm:d-none"></div>
+                </li>
+
+                <li class="list-item list-item-block-wrap pos-relative d-flex w-full" data-img="assets/images/kenny_mason/kenny_list_view.webp">
+                    <a class="list-item-block d-flex w-full" href="/doja-cat.html" data-disable-on-mobile="true">
+                        <div class="flex-1 d-flex padding-inline-20 padding-block-8">
+                            <div class="d-flex gap-8 sm:d-none"><span>01</span><span>Scarlet</span></div>
+                            <button class="d-flex-column md:d-none mobile-active"><div class="nowrap">Scarlet By Doja Cat</div><div>(RCA Records)</div></button> 
+                            </div>
+                        <div class="flex-1 padding-block-8 sm:d-none">Doja Cat</div>
+                        <div class="flex-1 padding-block-8 sm:d-none">Creative Strategy</div>
+                        <div class="flex-1 padding-block-8 sm:d-none">RCA Records</div>
+                        <div class="flex-1 padding-block-8 padding-inline-20"><div class="d-flex justify-between"><span class="sm:d-none">2022</span><span class="sm:d-none">View Campaign</span></div></div>
+                    </a>
+                        
+                    <a class="md:d-none padding-inline-20 padding-block-8" href=""><span class="nowrap font-size-11">View Campaign</span></a>
+                    <div class="list-item-bg sm:d-none"></div>
+                </li>
+
                 
             </ul>
+        </div>
+
+        <div class=" d-none list-view-bg-img">
+            <img src="/assets/images/doja_cat/scarlet_list_view.webp" alt="">
         </div>
     </div>
 
