@@ -248,13 +248,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // Call preload once on load
     preloadHoverImages();
     
-    // Setup hover image behavior
+    // Setup background image logic
     const bgImg = document.querySelector('.bg-img');
     const listItems = document.querySelectorAll('.list-item');
+    
+    // ✅ Set default active image on mobile view
+    if (window.innerWidth <= 650 && listItems.length > 0) {
+      listItems[0].classList.add('is-active');
+      
+    }
     
     if (bgImg && listItems.length) {
       let preloadCache = {};
     
+      // Preload all hover images into memory
       listItems.forEach(item => {
         const imageUrl = item.getAttribute('data-img');
         if (imageUrl) {
@@ -264,6 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     
+      // Hover image logic for desktop
       listItems.forEach(item => {
         const imageUrl = item.getAttribute('data-img');
     
@@ -284,9 +292,22 @@ document.addEventListener('DOMContentLoaded', () => {
           bgImg.classList.remove('active');
         });
       });
+    
+      // Click-to-activate logic for mobile
+      listItems.forEach(item => {
+        item.addEventListener('click', () => {
+          if (window.innerWidth <= 650) {
+            listItems.forEach(i => i.classList.remove('is-active'));
+            item.classList.add('is-active');
+            setMobileActiveImage();
+          }
+        });
+      });
     } else {
-      console.warn("Single hover image or list items missing");
+      console.warn("Missing .bg-img or .list-item elements");
     }
+    
+
     
 
 

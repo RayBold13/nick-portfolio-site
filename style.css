@@ -1051,11 +1051,7 @@ body:has([data-cursor]:hover) .cursor {
 }
 
 @media (max-width: 650px) {
-    .list-item.is-active .bg-img {
-      opacity: 1;
-      transform: scale(1); /* or whatever hover transform you use */
-      transition: opacity 0.3s ease, transform 0.3s ease;
-    }
+   
   
     .list-item .list-item-bg {
       opacity: 0;
@@ -1097,17 +1093,6 @@ body:has([data-cursor]:hover) .cursor {
     width: 100vw;
     font-size: 11px;
     
-}
-
-.list-view-bg-img{
-    height: 400px;
-    width: 300px;
-    z-index: -1;
-    opacity: .50;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 .mobile-inactive{
@@ -1202,6 +1187,7 @@ body:has([data-cursor]:hover) .cursor {
     opacity: 0;
     transform: scale(1.24);
     overflow: visible;
+    z-index: 0;
   }
 
   .bg-img:not([src]):not([src=""]) {
