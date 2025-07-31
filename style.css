@@ -358,6 +358,7 @@ p{
 .padding-top-154{padding-top: 154px;}
 .padding-top-150{padding-top: 150px;}
 .padding-top-200{padding-top: var(--spacing-200);}
+.padding-top-225{padding-top: 225px;}
 .padding-top-300{padding-top: var(--spacing-300);}
 
 @media (max-width:700px) {
@@ -397,8 +398,10 @@ p{
 .margin-top-80{margin-top: 80px;}
 .margin-top-100{margin-top: var(--spacing-100);}
 .margin-top-150{margin-top: 150px;}
-
 .margin-right-20{margin-right: var(--spacing-20);}
+
+.fixed-top-194{top: 194px;}
+
 
 
 
@@ -456,6 +459,22 @@ p{
 @media (max-width:635px) {
     .sm\:d-none{
         display: none;
+    }
+
+    .sm\:padding-inline-12{
+        padding-inline: var(--spacing-12);
+    }
+
+    .sm\:right-12{
+        right: var(--spacing-12);
+    }
+
+    .sm\:padding-top-110{
+        padding-top: 110px;
+    }
+
+    .sm\:fixed-top-100{
+        top: var(--spacing-100);
     }
     
 }
@@ -797,6 +816,11 @@ transform: translate(-50%, -50%);}
 
 
 .spacer{height: 110vh;}
+
+.project-header{
+    transition: 1s ease;
+    transition-delay: 1s;
+}
 
 
 
@@ -1163,7 +1187,17 @@ body:has([data-cursor]:hover) .cursor {
   
 
 
-
+  .work-bg-img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  
 
 
 .work-bg-img img {
@@ -1171,34 +1205,23 @@ body:has([data-cursor]:hover) .cursor {
     height: 100%;
     object-fit: cover;
     opacity: 0;
+    z-index: 0;
     transform: scale(1.24);
     transition: transform 0.5s ease, opacity 0.3s ease;
   }
   
 
-  .bg-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: opacity 0.4s ease, transform 1s ease;
-    opacity: 0;
-    transform: scale(1.24);
-    overflow: visible;
-    z-index: 0;
-  }
+
 
   .bg-img:not([src]):not([src=""]) {
     display: none;
   }
   
   
-  .bg-img.active {
+  .work-bg-img img.active {
     opacity: 1;
     transform: scale(1);
-    z-index: 1;
+    z-index: 0;
   }
 
   
@@ -1217,7 +1240,13 @@ body:has([data-cursor]:hover) .cursor {
   
 
 
-
+  .transition-controls{
+    display: flex;
+    gap: var(--spacing-16);
+    position: relative;
+    font-size: 10px;
+    z-index: 9999;
+  }
 
 
   .slider{
@@ -1331,7 +1360,6 @@ body:has([data-cursor]:hover) .cursor {
 
   .desktop-nav{
     display: flex;
-    padding-inline: 20px;
     padding-block: 12px;
     justify-content: space-between;
     position: fixed;

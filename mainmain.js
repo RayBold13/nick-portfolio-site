@@ -1,4 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+
+  const btnList = document.getElementById('btn-list');
+  const projectHeader = document.querySelector('.project-header');
+
+  btnList.addEventListener('click', () => {
+    if (window.innerWidth <= 635) {
+      projectHeader.classList.add('sm:padding-inline-12', 'sm:fixed-top-100');
+    }
+  });
   // --- Transition Logic ---
 
   function runEntryTransition() {
@@ -231,7 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     function setMobileActiveImage() {
-      const bgImg = document.querySelector('.bg-img');
+      const bgImg = document.querySelector('.work-bg-img img');
       const activeItem = document.querySelector('.list-item.is-active');
     
       if (!bgImg || !activeItem) return;
@@ -249,7 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
     preloadHoverImages();
     
     // Setup background image logic
-    const bgImg = document.querySelector('.bg-img');
+    const bgImg = document.querySelector('.work-bg-img img');
     const listItems = document.querySelectorAll('.list-item');
     
     // ✅ Set default active image on mobile view
