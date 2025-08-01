@@ -1234,6 +1234,7 @@ body:has([data-cursor]:hover) .cursor {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: -1;
+    will-change: clip-path;
   }
 
   .mobile-bg-img img{
