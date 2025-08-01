@@ -1,35 +1,34 @@
-const mobileListItem = document.querySelectorAll('.mobile-list-item');
 const mobileBgImg = document.querySelector('.mobile-bg-img');
+const mobileListItems = document.querySelectorAll('.mobile-list-item');
 
-mobileListItem.forEach((mobileItem) => {
-  mobileItem.addEventListener('click', () => {
-    const imgSrc = mobileItem.getAttribute('data-img');
+function animateImageIn(imgSrc) {
+  const newImg = document.createElement('img');
+  newImg.src = imgSrc;
+  newImg.style.clipPath = 'polygon(0% 50%, 100% 50%, 100% 50%, 0% 50%)';
 
+  mobileBgImg.appendChild(newImg);
+
+  gsap.to(newImg.style, {
+    clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+    duration: 1,
+    ease: 'power3.out',
+  });
+}
+
+// Animate first image on load
+window.addEventListener('DOMContentLoaded', () => {
+  const firstItem = mobileListItems[0];
+  if (firstItem) {
+    const imgSrc = firstItem.getAttribute('data-img');
+    if (imgSrc) animateImageIn(imgSrc);
+  }
+});
+
+// Animate new images on click
+mobileListItems.forEach(item => {
+  item.addEventListener('click', () => {
+    const imgSrc = item.getAttribute('data-img');
     if (!imgSrc) return;
-
-    const newImg = document.createElement('img');
-    newImg.src = imgSrc;
-    newImg.style.clipPath = "polygon(0% 50%, 100% 50%, 100% 50%, 0% 50%)";
-    newImg.style.opacity = "1";
-
-    mobileBgImg.appendChild(newImg);
-
-    // Animate the new image in
-    gsap.to(newImg, {
-      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-      duration: 1,
-      ease: "power3.out"
-    });
-
-    // Remove previous image after animation (keep newest)
-    const allImgs = mobileBgImg.querySelectorAll('img');
-    if (allImgs.length > 1) {
-      const prevImg = allImgs[allImgs.length - 2];
-      gsap.to(prevImg, {
-        opacity: 0,
-        duration: 1,
-        onComplete: () => prevImg.remove()
-      });
-    }
+    animateImageIn(imgSrc);
   });
 });
