@@ -270,6 +270,9 @@ p{
     font-size: 12px;
 }
 
+.font-size-13{font-size: 13px;}
+.font-size-10{font-size: 10px;}
+
 .font-size-48{
     font-size: 48px;
     letter-spacing: -1.64px;
@@ -402,6 +405,8 @@ p{
 
 .fixed-top-194{top: 194px;}
 
+.top-100{top: 130px;}
+
 
 
 
@@ -410,6 +415,7 @@ p{
 .h-full   { height: 100%; }
 .h-fit    { height: fit-content;}
 .h-screen { height: 100vh; }
+.h-50 {height: 50vh;}
 .h-dvh{height: 100dvh;}
 .h-min    { min-height: 100vh; }
 .h-2-screen{height: 200vh;}
@@ -790,6 +796,10 @@ transform: translate(-50%, -50%);}
 .left-20{left: 20px;}
 .right-0{right: 0;}
 .right-20{right: 20px;}
+.top-center{
+    top: 50vh;
+    position: absolute;
+}
 
 
 /* ========== Aspect Ratio Utilities ========== */
@@ -810,6 +820,9 @@ transform: translate(-50%, -50%);}
 .aspect-16-9 { aspect-ratio: 16 / 9; }
 
 
+.overflow-y{overflow-y: auto;}
+
+
 
 .nowrap{white-space: nowrap;}
 
@@ -820,6 +833,8 @@ transform: translate(-50%, -50%);}
 .project-header{
     transition: 1s ease;
     transition-delay: 1s;
+    position: fixed;
+    top: 194px;
 }
 
 
@@ -1210,6 +1225,25 @@ body:has([data-cursor]:hover) .cursor {
     transition: transform 0.5s ease, opacity 0.3s ease;
   }
   
+
+  .mobile-bg-img{
+    width: 300px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+
+  .mobile-bg-img img{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+  }
 
 
 
