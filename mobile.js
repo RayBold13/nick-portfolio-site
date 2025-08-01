@@ -1,9 +1,4 @@
-
-
-
-window.addEventListener('DOMContentLoaded', () =>{
-
-    const mobileListItem = document.querySelectorAll('.mobile-list-item');
+const mobileListItem = document.querySelectorAll('.mobile-list-item');
 const mobileBgImg = document.querySelector('.mobile-bg-img');
 
 mobileListItem.forEach((mobileItem) => {
@@ -38,4 +33,3 @@ mobileListItem.forEach((mobileItem) => {
     }
   });
 });
-})
