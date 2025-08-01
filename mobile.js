@@ -22,41 +22,64 @@ function animateImageIn(imgSrc) {
       top: 0,
       left: 0,
       willChange: 'clip-path',
-      zIndex: mobileBgImg.children.length + 1, // Stack on top
+      zIndex: mobileBgImg.children.length + 1,
     });
 
     mobileBgImg.appendChild(newImg);
 
-    // Animate in
     gsap.to(newImg, {
       clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
       duration: 1,
       ease: 'power3.out',
     });
 
-    // Keep only top 2 images: current and previous
+    // Keep only top 2 images
     if (mobileBgImg.children.length > 2) {
-      mobileBgImg.removeChild(mobileBgImg.firstChild); // Remove oldest image
+      mobileBgImg.removeChild(mobileBgImg.firstChild);
     }
   }).catch((err) => {
     console.error('Image failed to load:', err);
   });
 }
 
-// Animate first image on load
+// Animate the first image on load
 window.addEventListener('DOMContentLoaded', () => {
   const firstItem = mobileListItems[0];
   if (firstItem) {
     const imgSrc = firstItem.getAttribute('data-img');
-    if (imgSrc) animateImageIn(imgSrc);
+    if (imgSrc) {
+      firstItem.classList.add('is-active');
+      animateImageIn(imgSrc);
+
+      // Add .mobile-inactive to all others
+      mobileListItems.forEach(item => {
+        if (item !== firstItem) item.classList.add('mobile-inactive');
+      });
+    }
   }
 });
 
-// Animate new image on click
+// Handle clicks to switch image and active state
 mobileListItems.forEach(item => {
   item.addEventListener('click', () => {
     const imgSrc = item.getAttribute('data-img');
     if (!imgSrc) return;
+
+    // Reset active/inactive classes
+    mobileListItems.forEach(i => {
+      i.classList.remove('is-active', 'mobile-inactive');
+    });
+
+    item.classList.add('is-active');
+
+    // Reapply .mobile-inactive to others
+    mobileListItems.forEach(i => {
+      if (!i.classList.contains('is-active')) {
+        i.classList.add('mobile-inactive');
+      }
+    });
+
+    // Animate image
     animateImageIn(imgSrc);
   });
 });
