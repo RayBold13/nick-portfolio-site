@@ -679,6 +679,9 @@ p{
 .about-overlay{
     display: none;
 }
+
+
+
 .grid-about{
     display: grid;
     column-gap: var(--spacing-20);
@@ -1557,7 +1560,7 @@ body:has([data-cursor]:hover) .cursor {
     position: fixed;
     width: 100vw;
     top: 0;
-    z-index: 20;
+    z-index: 99999999;;
   }
 
   .nav-container{
