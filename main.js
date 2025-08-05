@@ -5,87 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let sliderEventListeners = [];
   let navigationListeners = [];
 
-  // --- About Overlay Functionality ---
-  function initializeAboutOverlay() {
-    const overlay = document.querySelector('.about-overlay');
-    const img = overlay?.querySelector('img');
-    const textElements = overlay?.querySelectorAll('.text-reveal');
-    const aboutButton = document.getElementById('open'); // Your updated ID
-    const closeButton = document.getElementById('close');
-
-    if (!overlay || !aboutButton) {
-      console.log('About overlay elements not found, skipping...');
-      return;
-    }
-
-    // Set initial styles once
-    gsap.set(overlay, {
-      clipPath: 'polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)'
-    });
-
-    if (img) {
-      gsap.set(img, {
-        clipPath: 'polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)',
-      });
-    }
-
-    if (textElements && textElements.length > 0) {
-      gsap.set(textElements, {
-        opacity: 0,
-        y: 20
-      });
-    }
-
-    // Create timeline (paused initially)
-    const aboutTL = gsap.timeline({ paused: true });
-
-    aboutTL
-      .to(overlay, {
-        clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
-        duration: 1.5,
-        ease: 'power2.out'
-      });
-
-    if (img) {
-      aboutTL.to(img, {
-        clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
-        duration: 0.8,
-        ease: 'power2.out'
-      }, "-=1.24");
-    }
-
-    if (textElements && textElements.length > 0) {
-      aboutTL.to(textElements, {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        ease: 'power2.out',
-        stagger: 0.05
-      }, "-=0.6");
-    }
-
-    // Event handlers
-    const aboutClickHandler = (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      aboutTL.play();
-    };
-
-    const closeClickHandler = (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      aboutTL.reverse();
-    };
-
-    // Add tracked listeners (using existing system)
-    addTrackedListener(aboutButton, 'click', aboutClickHandler);
-    if (closeButton) {
-      addTrackedListener(closeButton, 'click', closeClickHandler);
-    }
-
-    console.log('About overlay initialized successfully');
-  }
-
   // --- Entry Transition ---
   function runEntryTransition() {
     return new Promise(resolve => {
@@ -161,9 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function originalInitializeMain() {
     // Clean up first
     cleanupEventListeners();
-
-    // Initialize About overlay
-    initializeAboutOverlay();
 
     // Example: btnList logic for small screen padding adjustment
     const btnList = document.getElementById('btn-list');
@@ -615,9 +531,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Clean up any existing mobile animations
     gsap.killTweensOf('.mobile-list-item');
     
-    // Initialize About overlay for mobile too
-    initializeAboutOverlay();
-    
     const mobileListView = document.getElementById('mobileListView');
     const mobileListItems = document.querySelectorAll('.mobile-list-item');
     const mobileBgImg = document.querySelector('.mobile-bg-img');
@@ -783,4 +696,6 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('beforeunload', () => {
     cleanupEventListeners();
   });
+  
 });
+
