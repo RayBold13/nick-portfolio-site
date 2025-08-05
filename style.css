@@ -686,6 +686,21 @@ p{
     grid-template-columns: repeat(12, 1fr);
 }
 
+@media (max-width:650px) {
+    .md\:grid-about > *{
+        grid-column: auto !important;
+    }
+
+    .grid-about {
+        grid-template-columns: 1fr;
+      }
+
+    
+    
+}
+
+.overflow-y
+
 /* ========== Container Utilities ========== */
 .grid-container{
     display: grid;
@@ -796,6 +811,17 @@ transform: translate(-50%, -50%);}
 
 .overlay{
     background-color: rgba(0, 0, 0, 0.208);
+}
+
+.headshot{
+    position: relative;
+    overflow: hidden;
+}
+
+.headshot img{
+    position: absolute;
+    width: auto;
+    transform: translateX(-10%)  ;
 }
 
 .location{
@@ -1220,6 +1246,8 @@ body:has([data-cursor]:hover) .cursor {
     .sm\:padding-block-60{
         padding-block: 60px;
     }
+
+    .sm\:h-fit{height: fit-content;}
     
 }
 

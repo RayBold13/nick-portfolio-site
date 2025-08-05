@@ -1,7 +1,7 @@
 const overlay = document.querySelector('.about-overlay');
 const img = overlay.querySelector('img');
 const textElements = overlay.querySelectorAll('.text-reveal');
-const aboutButton = document.getElementById('About');
+const aboutButton = document.getElementById('open');
 const closeButton = document.getElementById('close');
 
 // Set initial styles once

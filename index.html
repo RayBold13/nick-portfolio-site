@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nick Anderson – Creative Strategy & Marketing Portfolio</title>
+    <title>By</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preload" href="/main.js" as="script">
     <script src="https://instant.page/5.1.1" type="module" defer></script>
@@ -13,55 +13,56 @@
 </head>
 <body>
 
-    <div class="about-overlay h-screen w-full pos-fixed top-0 inverse-bg z-max padding-top-100 grid-about padding-inline-20 z-max">
-        <button id="close" class="pos-absolute top-20 right-20 black capitalize z-max">Close</button>
-        <div class="col-start-1 col-end-4">
-            <div class="font-size-48 black capitalize text-reveal">Nick Anderson</div>
-        </div>
-        <div class="col-start-1 col-end-4 font-size-12 black capitalize h-fit d-flex-column gap-24">
-           <div class="text-reveal">Creative Marketing Strategist based out of Los Angeles</div>
-           <div class="aspect-3-4">
-            <img src="/assets/images/headshot.webp" alt="">
-           </div>
-        </div>
-    
-        <div class="col-start-5 col-end-8 font-size-12 black capitalize d-flex-column gap-24">
-    
-            <div class="d-flex-column gap-8">
-                <div class="text-reveal">Bio:</div>
-                <div class="text-reveal">Brand marketing strategist with a background in digital marketing and social media management. Passionate about storytelling and connecting campaigns with culture. <br>Located in Los Angeles, CA. </div>
+    <div class="about-overlay h-screen sm:h-fit bg-color-inverse w-screen d-flex padding-top-100 padding-bottom-40">
+        <button id="close" class="pos-fixed top-20 right-20 black capitalize z-max">Close</button>
+        <div class="  grid-about md:grid-about padding-inline-12">
+            <div class="col-start-1 col-end-4">
+                <div class="font-size-48 black capitalize text-reveal">Nick Anderson</div>
             </div>
-    
-            <div class="d-flex-column gap-8">
-                <div class="text-reveal">Artist:</div>
-                <div class="text-reveal">Doja Cat, Kenny Mason, Childish Gambino Normani, Lucky Daye, Foushee, Lisa, Khalid</div>
-            </div>
-    
-            <div class="d-flex-column gap-8">
-                <div class="text-reveal">Companies:</div>
-                <div class="text-reveal">Capitol Records, Canon, JBL, Vogue, Def Jam, Republic Records, RCA Records</div>
-            </div>
-         </div>
-    
-         <div class="col-start-9 col-end-12 font-size-12 black capitalize d-flex-column h-fit gap-24">
-    
-            <div class="d-flex-column gap-8">
-                <div class="text-reveal">Contact</div>
-                <div class="d-flex-column gap-4">
-                    <div class="text-reveal lowercase">nickanderson.contact@gmail.com</div>
-                    <div class="text-reveal">323.718.6242</div>
+            <div class="col-start-1 col-end-4 font-size-12 black capitalize h-fit d-flex-column gap-24">
+                <div class="text-reveal">Creative Marketing Strategist based out of Los Angeles</div>
+                <div class="headshot aspect-3-4">
+                 <img src="/assets/images/headshot.webp" alt="">
                 </div>
-            </div>
-    
-            <div class="d-flex-column gap-8">
-                <ul class="d-flex gap-4">
-                    <li class="text-reveal"><a href="">LinkedIn</a></li><span class="text-reveal">–</span>
-                    <li class="text-reveal"><a href="">Spotify</a></li><span class="text-reveal">–</span>
-                    <li class="text-reveal"><a href="">Instagram</a></li>
-                </ul>
-            </div>
-         </div>
-    
+             </div>
+         
+             <div class="col-start-5 col-end-8 font-size-12 black capitalize d-flex-column gap-24">
+         
+                 <div class="d-flex-column gap-8">
+                     <div class="text-reveal">Bio:</div>
+                     <div class="text-reveal">Brand marketing strategist with a background in digital marketing and social media management. Passionate about storytelling and connecting campaigns with culture. <br>Located in Los Angeles, CA. </div>
+                 </div>
+         
+                 <div class="d-flex-column gap-8">
+                     <div class="text-reveal">Artist:</div>
+                     <div class="text-reveal">Doja Cat, Kenny Mason, Childish Gambino Normani, Lucky Daye, Foushee, Lisa, Khalid</div>
+                 </div>
+         
+                 <div class="d-flex-column gap-8">
+                     <div class="text-reveal">Companies:</div>
+                     <div class="text-reveal">Capitol Records, Canon, JBL, Vogue, Def Jam, Republic Records, RCA Records</div>
+                 </div>
+              </div>
+         
+              <div class="col-start-9 col-end-12 font-size-12 black capitalize d-flex-column h-fit gap-24">
+         
+                 <div class="d-flex-column gap-8">
+                     <div class="text-reveal">Contact</div>
+                     <div class="d-flex-column gap-4">
+                         <div class="text-reveal lowercase">nickanderson.contact@gmail.com</div>
+                         <div class="text-reveal">323.718.6242</div>
+                     </div>
+                 </div>
+         
+                 <div class="d-flex-column gap-8">
+                     <ul class="d-flex gap-4">
+                         <li class="text-reveal"><a href="">LinkedIn</a></li><span class="text-reveal">–</span>
+                         <li class="text-reveal"><a href="">Spotify</a></li><span class="text-reveal">–</span>
+                         <li class="text-reveal"><a href="">Instagram</a></li>
+                     </ul>
+                 </div>
+              </div>
+        </div>
     </div>
 
         <div class="wipe">
@@ -83,7 +84,7 @@
             <div class="nav-container d-flex-column gap-8">
                 <ul class="d-flex gap-16 justify-between">              
                     <li><a href="/index.html">Work</a></li>
-                    <button id="About">About</button>
+                    <li><button id="open">About</button></li>
                 </ul>
             </div>
           </div>
@@ -722,7 +723,9 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-<script src="about.js"></script>
+
+
+
 
 
     
