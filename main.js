@@ -673,6 +673,75 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Initialize About Overlay functionality
+  function initializeAboutOverlay() {
+    const overlay = document.querySelector('.about-overlay');
+    const img = overlay?.querySelector('img');
+    const textElements = overlay?.querySelectorAll('.text-reveal');
+    const aboutButton = document.getElementById('open');
+    const closeButton = document.getElementById('close');
+
+    // Check if all required elements exist
+    if (!overlay || !img || !textElements.length || !aboutButton || !closeButton) {
+      console.warn('About overlay elements not found - skipping initialization');
+      return;
+    }
+
+    // Set initial styles
+    overlay.style.display = 'none';
+
+    gsap.set(overlay, {
+      clipPath: 'polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)'
+    });
+
+    gsap.set(img, {
+      clipPath: 'polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)',
+    });
+
+    gsap.set(textElements, {
+      opacity: 0,
+      y: 20
+    });
+
+    // Create timeline (paused initially)
+    const aboutTL = gsap.timeline({ paused: true });
+
+    aboutTL
+      .to(overlay, {
+        clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+        duration: 1.5,
+        ease: 'power2.out'
+      })
+      .to(img, {
+        clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+        duration: 0.8,
+        ease: 'power2.out'
+      }, "-=1.24")
+      .to(textElements, {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: 'power2.out',
+        stagger: 0.05
+      }, "-=0.6");
+
+    // Event handlers
+    const openHandler = () => {
+      overlay.style.display = 'flex';
+      aboutTL.play();
+    };
+
+    const closeHandler = () => {
+      aboutTL.reverse().then(() => {
+        overlay.style.display = 'none';
+      });
+    };
+
+    // Add tracked listeners so they get cleaned up properly
+    addTrackedListener(aboutButton, 'click', openHandler);
+    addTrackedListener(closeButton, 'click', closeHandler);
+  }
+
   // Debounced resize handler to prevent excessive calls
   let resizeTimeout;
   function handleResize() {
@@ -686,6 +755,7 @@ document.addEventListener('DOMContentLoaded', () => {
   runEntryTransition().then(() => {
     initializeMain();
     addNavigationListeners();
+    initializeAboutOverlay(); // Add this here
     isInitialized = true;
   });
 
@@ -696,5 +766,4 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('beforeunload', () => {
     cleanupEventListeners();
   });
-  
 });

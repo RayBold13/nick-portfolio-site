@@ -502,6 +502,10 @@ p{
     .sm\:fixed-top-100{
         top: var(--spacing-100);
     }
+
+    .sm\:padding-top-20{
+        padding-top: 20px !important;
+    }
     
 }
 
@@ -509,6 +513,8 @@ p{
     .md\:d-none{
         display: none;
     }
+
+    
     
 }
 
@@ -677,7 +683,57 @@ p{
 
 
 .about-overlay{
-    display: none;
+    display: flex;
+    height: 100dvh;
+    width: 100vw;
+    background-color: var(--color-bg-inverse);
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: scroll;
+
+}
+
+.overlay-info-container{
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    gap: 20px 139px;
+    min-width: 217px;
+    height: fit-content;
+    padding-inline: 20px;
+}
+
+.headshot-img-container{
+    position: relative;
+    overflow: hidden;
+}
+
+.headshot-img-container img{
+    position: absolute;
+    width: auto;
+    transform: translateX(-10%);
+}
+
+.overlay-info-container > :nth-child(1){
+    width: 335px;
+}
+
+.overlay-info-container > :nth-child(2), 
+.overlay-info-container > :nth-child(3) {
+    flex: 1 1 auto;
+    max-width: 335px;
+    min-width: 217px;
+    padding-top: 89px;
+    
+}
+
+@media (max-width:650px) {
+    .md\:padding-top-none{
+        padding-top: 0 !important;
+    }
+    
 }
 
 
@@ -817,16 +873,7 @@ transform: translate(-50%, -50%);}
     background-color: rgba(0, 0, 0, 0.208);
 }
 
-.headshot{
-    position: relative;
-    overflow: hidden;
-}
 
-.headshot img{
-    position: absolute;
-    width: auto;
-    transform: translateX(-10%)  ;
-}
 
 .location{
     top: 12px;
@@ -1560,7 +1607,7 @@ body:has([data-cursor]:hover) .cursor {
     position: fixed;
     width: 100vw;
     top: 0;
-    z-index: 99999999;;
+    z-index: 20;
   }
 
   .nav-container{
