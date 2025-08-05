@@ -1207,13 +1207,20 @@ body:has([data-cursor]:hover) .cursor {
     .project-img-section{
         padding-inline: var(--spacing-12);
         gap: var(--spacing-12);
-        margin-block: 100px;
+        margin-block: 0px;
     }
     .section-text-container{
         gap: 0px;
         padding-inline: var(--spacing-12);
         flex-direction: column;
     }   
+}
+
+@media (max-width: 650px) {
+    .sm\:padding-block-60{
+        padding-block: 60px;
+    }
+    
 }
 
 .w-max-336{max-width: 336px;}
