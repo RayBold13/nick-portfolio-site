@@ -74,15 +74,15 @@ document.addEventListener('DOMContentLoaded', () => {
   
             tl.to(slides, {
               clipPath: "inset(50% 0% 50% 0%)",
-              duration: 0.5,
-              stagger: 0.05,
+              duration: 0.4,
+              stagger: 0.03,
               ease: "power2.inOut",
             }, 0);
   
             tl.to(slideInfos, {
               opacity: 0,
-              duration: 0.3,
-              stagger: 0.05,
+              duration: 0.2,
+              stagger: 0.03,
               ease: "power2.out"
             }, 0);
           });
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
               opacity: 1,
               y: 0,
               duration: 0.6,
-              stagger: 0.07,
+              stagger: 0.05,
               ease: "power2.out"
             }
           );
@@ -116,22 +116,22 @@ document.addEventListener('DOMContentLoaded', () => {
               const slideInfos = document.querySelectorAll(".slide-info");
   
               const revealTl = gsap.timeline();
-              revealTl.set(slideEls, { clipPath: "inset(50% 0% 50% 0%)" });
+              revealTl.set(slideEls, { clipPath: "polygon(0% 50%, 100% 50%, 100% 50%, 0% 50%)" });
               revealTl.set(slideInfos, { opacity: 0 });
   
               revealTl.to(slideEls, {
-                clipPath: "inset(0% 0% 0% 0%)",
-                duration: 1.24,
+                clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+                duration: 1,
                 ease: "power2.out",
                 stagger: 0.05
               });
   
               revealTl.to(slideInfos, {
                 opacity: 1,
-                duration: 0.5,
+                duration: 0.3,
                 stagger: 0.05,
                 ease: "power2.out"
-              }, ">-2");
+              }, ">-3.48");
   
               btnSlider.classList.add("is-active");
               btnList.classList.remove("is-active");
@@ -258,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
       };
   
       const state = {
-        currentX: 0,
+        currentX: 20,
         targetX: 0,
         slideWidth: 0,
         slides: [],
@@ -298,12 +298,17 @@ document.addEventListener('DOMContentLoaded', () => {
           });
         }
   
+       
         const slide = track.querySelector(".slide");
-        if (slide) {
-          state.slideWidth = slide.offsetWidth + 20;
-          const startOffset = -(originalSlides.length * state.slideWidth * 2);
-          state.currentX = state.targetX = startOffset;
-        } else {
+if (slide) {
+  const trackStyle = window.getComputedStyle(track);
+  const gap = parseFloat(trackStyle.gap) || 0;
+  state.slideWidth = slide.offsetWidth + gap;
+
+  const startOffset = -(originalSlides.length * state.slideWidth * 2);
+  state.currentX = state.targetX = startOffset;
+}
+else {
           console.warn("No slide elements found");
         }
       }
@@ -361,13 +366,15 @@ document.addEventListener('DOMContentLoaded', () => {
       }
   
       function handleWheel(e) {
-        if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
         e.preventDefault();
-  
-        const scrollDelta = e.deltaY * config.SCROLL_SPEED;
+      
+        const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+        const scrollDelta = delta * config.SCROLL_SPEED;
+      
         state.targetX -= Math.max(Math.min(scrollDelta, config.MAX_VELOCITY), -config.MAX_VELOCITY);
         state.lastScrollTime = Date.now();
       }
+      
   
       function handleTouchStart(e) {
         state.isDragging = true;

@@ -10,12 +10,12 @@
   <div class="showreel container d-flex-column h-screen w-full bg-color overflow-none padding-40">
     <div class="showreel-video-container">
         <div class="pos-relative h-full">
-          <video muted loop autoplay src="/RCA_Showreel.mp4"></video>
+          <video id="showreel-video" muted loop autoplay src="/assets/videos/RCA_Showreel.mp4"></video>
 
           <div class="video-controls">
-            <button class="control-btn-secondary"><img src="/icons/refresh-reverse.svg" alt=""></button>
+            <button id="reverse-btn" class="control-btn-secondary"><img src="/icons/refresh-reverse.svg" alt=""></button>
             <button class="control-btn-primary"><span>Enter Site</span></button>
-            <button class="control-btn-secondary"><img src="/icons/pause-rounded.svg" alt=""></button>
+            <button id="sound-btn" class="control-btn-secondary"><img src="/icons/pause-rounded.svg" alt=""></button>
           </div>
         </div>
     </div>
@@ -24,6 +24,6 @@
     
 </div>  
 
-<script src="/cursor.js"></script>
+<script src="/preloader.js"></script>
 </body>
 </html>

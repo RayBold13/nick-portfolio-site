@@ -13,19 +13,56 @@
 </head>
 <body>
 
-        <div class="d-none showreel container d-flex-column h-screen w-full bg-color overflow-none padding-80 pos-fixed z-max">
-            <div class="showreel-video-container">
-                <div class="pos-relative h-full">
-                    <video muted loop autoplay src="/RCA_Showreel.mp4"></video>
-          
-                    <div class="video-controls">
-                      <button id="reverse-btn" class="control-btn-secondary"><img src="/icons/refresh-reverse.svg" alt=""></button>
-                      <button class="control-btn-primary"><span>Enter Site</span></button>
-                      <button id="sound-btn" class="control-btn-secondary"><img src="/icons/pause-rounded.svg" alt=""></button>
-                    </div>
-                  </div>
-            </div>
+    <div class="about-overlay h-screen w-full pos-fixed top-0 inverse-bg z-max padding-top-100 grid-about padding-inline-20 z-max">
+        <button id="close" class="pos-absolute top-20 right-20 black capitalize z-max">Close</button>
+        <div class="col-start-1 col-end-4">
+            <div class="font-size-48 black capitalize text-reveal">Nick Anderson</div>
         </div>
+        <div class="col-start-1 col-end-4 font-size-12 black capitalize h-fit d-flex-column gap-24">
+           <div class="text-reveal">Creative Marketing Strategist based out of Los Angeles</div>
+           <div class="aspect-3-4">
+            <img src="/assets/images/headshot.webp" alt="">
+           </div>
+        </div>
+    
+        <div class="col-start-5 col-end-8 font-size-12 black capitalize d-flex-column gap-24">
+    
+            <div class="d-flex-column gap-8">
+                <div class="text-reveal">Bio:</div>
+                <div class="text-reveal">Brand marketing strategist with a background in digital marketing and social media management. Passionate about storytelling and connecting campaigns with culture. <br>Located in Los Angeles, CA. </div>
+            </div>
+    
+            <div class="d-flex-column gap-8">
+                <div class="text-reveal">Artist:</div>
+                <div class="text-reveal">Doja Cat, Kenny Mason, Childish Gambino Normani, Lucky Daye, Foushee, Lisa, Khalid</div>
+            </div>
+    
+            <div class="d-flex-column gap-8">
+                <div class="text-reveal">Companies:</div>
+                <div class="text-reveal">Capitol Records, Canon, JBL, Vogue, Def Jam, Republic Records, RCA Records</div>
+            </div>
+         </div>
+    
+         <div class="col-start-9 col-end-12 font-size-12 black capitalize d-flex-column h-fit gap-24">
+    
+            <div class="d-flex-column gap-8">
+                <div class="text-reveal">Contact</div>
+                <div class="d-flex-column gap-4">
+                    <div class="text-reveal lowercase">nickanderson.contact@gmail.com</div>
+                    <div class="text-reveal">323.718.6242</div>
+                </div>
+            </div>
+    
+            <div class="d-flex-column gap-8">
+                <ul class="d-flex gap-4">
+                    <li class="text-reveal"><a href="">LinkedIn</a></li><span class="text-reveal">–</span>
+                    <li class="text-reveal"><a href="">Spotify</a></li><span class="text-reveal">–</span>
+                    <li class="text-reveal"><a href="">Instagram</a></li>
+                </ul>
+            </div>
+         </div>
+    
+    </div>
 
         <div class="wipe">
             <div class="container-block"></div>
@@ -33,80 +70,32 @@
            
         </div>
 
-        <div class="d-none about-overlay h-screen w-full pos-fixed top-0 inverse-bg z-max padding-top-100 grid-about padding-inline-20">
-        <button class="pos-absolute top-20 right-20 black capitalize">Close</button>
-        <div class="col-start-1 col-end-4">
-            <div class="font-size-48 black capitalize">Nick Anderson</div>
-        </div>
-        <div class="col-start-1 col-end-4 font-size-12 black capitalize h-fit d-flex-column gap-24">
-           <div>Creative Marketing Strategist based out of Los Angeles</div>
-           <div class="aspect-3-4">
-            <img src="/assets/images/Nick_Anderson_HS.jpg" alt="">
-           </div>
-        </div>
 
-        <div class="col-start-5 col-end-8 font-size-12 black capitalize d-flex-column gap-24">
-            <div>Past Collaborations</div>
-
-            <div class="d-flex-column gap-8">
-                <div>Artist:</div>
-                <div>Doja Cat, Kenny Mason, Childish Gambino Normani, Lucky Daye, Foushee, Lisa, Khalid</div>
-            </div>
-
-            <div class="d-flex-column gap-8">
-                <div>Companies:</div>
-                <div>Capitol Records, Canon, JBL, Vogue, Def Jam, Republic Records, RCA Records</div>
-            </div>
-         </div>
-
-         <div class="col-start-9 col-end-12 font-size-12 black capitalize d-flex-column h-fit gap-24">
-
-            <div class="d-flex-column gap-8">
-                <div>Contact</div>
-                <div class="d-flex-column gap-4">
-                    <div>nickanderson.contact@gmail.com</div>
-                    <div>323.718.6242</div>
-                </div>
-            </div>
-
-            <div class="d-flex-column gap-8">
-                <ul class="d-flex gap-4">
-                    <li><a href="">LinkedIn</a></li><span>–</span>
-                    <li><a href="">Spotify</a></li><span>–</span>
-                    <li><a href="">Instagram</a></li>
+        <div class="desktop-nav label-base padding-inline-20 sm:padding-inline-12 z-9999">
+            <a href="#" class="nav-item d-flex gap-4">
+              <span>Nick Anderson</span>
+              <span>–</span>
+              <span>Marketing Strategist</span>
+            </a>
+          
+            
+          
+            <div class="nav-container d-flex-column gap-8">
+                <ul class="d-flex gap-16 justify-between">              
+                    <li><a href="/index.html">Work</a></li>
+                    <button id="About">About</button>
                 </ul>
             </div>
-         </div>
-
-         
-
-        
-      </div>
-
-    <div class="desktop-nav label-base padding-inline-20 sm:padding-inline-12 z-max">
-        <a href="#" class="nav-item d-flex gap-4">
-          <span>Nick Anderson</span>
-          <span>–</span>
-          <span>Marketing Strategist</span>
-        </a>
-
-        
-
-        <div class="nav-container d-flex-column gap-8">
-            <ul class="d-flex gap-16 justify-between">              
-                <li><a href="/mobileview.html">Work</a></li>
-                <li><a href="">About</a></li>
-            </ul>
-        </div>
-      </div>
+          </div>
 
       <div class="work-bg-img opacity-50">
-        <img src="" alt="" />
+        <img class="" src="" alt="" />
       </div>
     
+    
 
-      <div class="project-header d-flex w-screen padding-inline-20 sm:padding-inline-12 pos-fixed justify-between z-10">
-        <div class="font-size-13">Campaigns (11)</div>
+      <div class="project-header d-flex w-screen padding-inline-20 sm:padding-inline-12 pos-fixed justify-between z-10 sm:d-none">
+        <div class="font-size-13">Campaigns (8)</div>
         <div class="transition-controls">
             <button id="btn-slider"><div class="d-flex gap-4"><span>[</span>Slide<span>]</span></div></button>
             <button id="btn-list"><div class="d-flex gap-4"><span>[</span>List<span>]</span></div></button>
@@ -119,28 +108,29 @@
         <ul class="slide-track">
 
 
-            <li > 
-                <div class="list-item-wrapper" data-cursor="Campaign Details">
-                    <a href="/foushee.html" class="slide">
-                        <div class="slide-image">
-                            <img src="/assets/images/foushee/foushee_slide_view.webp">
-                        </div>
-                        
-                        <div class="project-tag">
+            
+
+
+            <li> <div class="list-item-wrapper">
+                <a href="/campaign/khalid.html" class="slide">
+                    <div class="slide-image">
+                        <img src="/assets/images/khalid/khalid_slide_view.webp" alt="">
+                    </div>
+
+                    <div class="project-tag">
                             <img src="/icons/view_eye_solid.svg" alt="" style="width: 12px; height: 12px;">
                             <span>View Details</span>
                         </div>
-                       
                     </a>
-                    <div class="slide-info"><span>Foushee – Pointy Heights</span><span>2024</span></div>
-                </div>
+                    <div class="slide-info"><span>Khalid – Sincere </span><span>2024</span></div>
+            </div>
             </li>
 
             <li>
                 <div class="list-item-wrapper">
-                    <a href="/normani.html" class="slide">
+                    <a href="/campaign/normani.html" class="slide">
                         <div class="slide-image">
-                            <img class="margin-top-100" src="/assets/images/normani/normani_slider_view.jpg">
+                            <img class="margin-top-100" src="/assets/images/normani/normain_list_view.jpg">
                         </div>
 
                         <div class="project-tag">
@@ -155,9 +145,9 @@
 
             <li>
                 <div class="list-item-wrapper">
-                    <a href="/doja-cat.html" class="slide">
+                    <a href="/campaign/doja-cat.html" class="slide">
                         <div class="slide-image">
-                            <img class="margin-top-100" src="/assets/images/doja_cat/doja_cat_slide_view.webp" alt="">
+                            <img class="margin-top-100" src="/assets/images/doja_cat/slide-view.webp" alt="">
                         </div>
 
                         <div class="project-tag">
@@ -165,27 +155,34 @@
                             <span>View Details</span>
                         </div>
                     </a>
-                    <div class="slide-info"><span>Doja Cat – Scarlet</span><span>2022</span></div>
+                    <div class="slide-info"><span>Doja Cat – Scarlet</span><span>2023</span></div>
                 </div>
             </li>
 
-            <li> <div class="list-item-wrapper">
-                <a href="/khalid.html" class="slide">
-                    <div class="slide-image">
-                        <img class="margin-top-40" src="assets/images/collaborations/canon.avif" alt="">
-                    </div>
+            
 
-                    <div class="project-tag">
-                            <img src="/icons/lock_fill.svg" alt="" style="width: 12px; height: 12px;">
+            <li > 
+                <div class="list-item-wrapper" data-cursor="Campaign Details">
+                    <a href="/campaign/foushee.html" class="slide">
+                        <div class="slide-image">
+                            <img src="/assets/images/foushee/foushee_slide_view.webp">
+                        </div>
+                        
+                        <div class="project-tag">
+                            <img src="/icons/view_eye_solid.svg" alt="" style="width: 12px; height: 12px;">
                             <span>View Details</span>
                         </div>
+                       
                     </a>
-                    <div class="slide-info"><span>Canon – Pop Up </span><span>2024</span></div>
-            </div>
+                    <div class="slide-info"><span>Foushee – Pointy Heights</span><span>2024</span></div>
+                </div>
             </li>
 
+           
+
+
             <li> <div class="list-item-wrapper">
-                <a href="/kenny-mason.html" class="slide">
+                <a href="/campaign/kenny-mason.html" class="slide">
                     <div class="slide-image">
                         <img class="margin-top-100" src="/assets/images/kenny_mason/kenny_mason_slide_view.jpg" alt="">
                     </div>
@@ -196,28 +193,29 @@
                         </div>
                     </a>
 
-                    <div class="slide-info"><span>Kenny Mason – Angel Eyes</span><span>2022</span></div>
+                    <div class="slide-info"><span>Kenny Mason – Angel Eyes</span><span>2024</span></div>
             </div>
             </li>
 
-            <li>
+            <li class="d-none"> 
                 <div class="list-item-wrapper">
-                    <a href="/doja-cat.html" class="slide">
-                        <div class="slide-image">
-                            <img class="margin-top-100" src="assets/images/def-jam.webp" alt="">
-                        </div>
+                <a href="#" class="slide">
+                    <div class="slide-image">
+                        <img class="margin-top-100" src="assets/images/collaborations/canon.avif" alt="">
+                    </div>
 
-                        <div class="project-tag">
-                            <img src="/icons/lock_fill.svg" alt="" style="width: 12px; height: 12px;">
-                            <span>Archived</span>
-                        </div>
+                    <div class="project-tag">
+                        <img src="/icons/lock_fill.svg" alt="" style="width: 12px; height: 12px;">
+                        <span>Archived</span>
+                    </div>
                     </a>
-                    <div class="slide-info"><span>Tyler The Creator – Pop Up</span><span>2022</span></div>
-                </div>
+                    <div class="slide-info"><span>Canon – Chinatown LA </span><span>2024</span></div>
+            </div>
             </li>
 
-            <li> <div class="list-item-wrapper">
-                <a href="/khalid.html" class="slide">
+            <li class="d-none"> 
+                <div class="list-item-wrapper">
+                <a href="#" class="slide">
                     <div class="slide-image">
                         <img src="assets/images/collaborations/vogue.avif" alt="">
                     </div>
@@ -227,12 +225,12 @@
                             <span>Archived</span>
                         </div>
                     </a>
-                    <div class="slide-info"><span>Vogue – Pop Up </span><span>2024</span></div>
+                    <div class="slide-info"><span>Vogue – Photo Vogue </span><span>2024</span></div>
             </div>
             </li>
 
             <li> <div class="list-item-wrapper">
-                <a href="/lisa.html" class="slide">
+                <a href="/campaign/gambino.html" class="slide">
                     <div class="slide-image">
                         <img class="margin-top-100" src="/assets/images/gambino/gambino_slide_view.jpg" alt="">
                     </div>
@@ -247,7 +245,7 @@
             </li>
 
             <li> <div class="list-item-wrapper">
-                <a href="/lisa.html" class="slide">
+                <a href="/campaign/lisa.html" class="slide">
                     <div class="slide-image">
                         <img class="margin-top-100" src="assets/images/lisa/lisa_list_view.avif" alt="">
                     </div>
@@ -257,27 +255,14 @@
                             <span>View Details</span>
                         </div>
                     </a>
-                    <div class="slide-info"><span>Lisa – Alter Ego</span><span>2024</span></div>
+                    <div class="slide-info"><span>Lisa – Alter Ego</span><span>2025</span></div>
             </div>
             </li>
 
-            <li> <div class="list-item-wrapper">
-                <a href="/khalid.html" class="slide">
-                    <div class="slide-image">
-                        <img src="/assets/images/khalid/khalid_slide_view.webp" alt="">
-                    </div>
 
-                    <div class="project-tag">
-                            <img src="/icons/view_eye_solid.svg" alt="" style="width: 12px; height: 12px;">
-                            <span>View Details</span>
-                        </div>
-                    </a>
-                    <div class="slide-info"><span>Khalid – Sincere </span><span>2024</span></div>
-            </div>
-            </li>
-
-            <li> <div class="list-item-wrapper">
-                <a href="/khalid.html" class="slide">
+            <li class="d-none"> 
+                <div class="list-item-wrapper">
+                <a href="#" class="slide">
                     <div class="slide-image">
                         <img src="assets/images/collaborations/jbl.avif" alt="">
                     </div>
@@ -287,14 +272,14 @@
                             <span>Archived</span>
                         </div>
                     </a>
-                    <div class="slide-info"><span>JBL – Pop Up </span><span>2024</span></div>
+                    <div class="slide-info"><span>JBL – True Summer </span><span>2024</span></div>
             </div>
             </li>
 
             <li> <div class="list-item-wrapper">
-                <a href="/khalid.html" class="slide">
+                <a href="/campaign/lucky-daye.html" class="slide">
                     <div class="slide-image">
-                        <img class="margin-top-40" src="/assets/images/lucky_daye/lucky_daye_slide_view.jpg" alt="">
+                        <img class="margin-top-40" src="/assets/images/lucky_daye/40130-4-007-048_B.webp" alt="">
                     </div>
 
                     <div class="project-tag">
@@ -304,6 +289,22 @@
                     </a>
                     <div class="slide-info"><span>Lucky Daye – Sincere </span><span>2024</span></div>
             </div>
+            </li>
+
+            <li class="d-none">
+                <div class="list-item-wrapper">
+                    <a href="#" class="slide">
+                        <div class="slide-image">
+                            <img class="" src="assets/images/def-jam.webp" alt="">
+                        </div>
+
+                        <div class="project-tag">
+                            <img src="/icons/lock_fill.svg" alt="" style="width: 12px; height: 12px;">
+                            <span>Archived</span>
+                        </div>
+                    </a>
+                    <div class="slide-info"><span>Navy Blue – Ways of Knowing</span><span>2022</span></div>
+                </div>
             </li>
 
             
@@ -321,50 +322,50 @@
         <div class="work-list-container w-full">
             <ul class="work-list-wrap d-flex-column gap-4">
 
-                <li class="list-item list-item-block-wrap pos-relative d-flex w-full" data-img="assets/images/doja_cat/scarlet_list_view.webp">
-                    <a class="list-item-block d-flex w-full" href="/doja-cat.html" data-disable-on-mobile="true">
+                <li class="list-item list-item-block-wrap pos-relative d-flex w-full" data-img="/assets/images/doja_cat/list-view.webp" data-y="-500">
+                    <a class="list-item-block d-flex w-full" href="/campaign/doja-cat.html" data-disable-on-mobile="true">
                         <div class="flex-1 d-flex padding-inline-20 sm:padding-inline-12 padding-block-8">
                             <div class="d-flex gap-8 sm:d-none"><span>01</span><span>Scarlet</span></div>
                             <button class="d-flex-column md:d-none mobile-active"><div class="nowrap">Scarlet By Doja Cat</div><div>(RCA Records)</div></button> 
                             </div>
                         <div class="flex-1 padding-block-8 sm:d-none">Doja Cat</div>
-                        <div class="flex-1 padding-block-8 sm:d-none">Creative Strategy</div>
+                        <div class="flex-1 padding-block-8 sm:d-none">Marketing Strategy</div>
                         <div class="flex-1 padding-block-8 sm:d-none">RCA Records</div>
-                        <div class="flex-1 padding-block-8 padding-inline-20"><div class="d-flex justify-between"><span class="sm:d-none">2022</span><span class="sm:d-none">View Campaign</span></div></div>
+                        <div class="flex-1 padding-block-8 padding-inline-20"><div class="d-flex justify-between"><span class="sm:d-none">2023</span><span class="sm:d-none">View Campaign</span></div></div>
                     </a>
                         
                     <a class="md:d-none padding-inline-20 sm:padding-inline-12 padding-block-8" href=""><span class="nowrap font-size-11">View Campaign</span></a>
                     <div class="list-item-bg sm:d-none"></div>
                 </li>
 
-                <li class="list-item list-item-block-wrap pos-relative d-flex w-full" data-img="assets/images/kenny_mason/kenny_list_view.webp">
-                    <a class="list-item-block d-flex w-full" href="/doja-cat.html" data-disable-on-mobile="true">
+                <li class="list-item list-item-block-wrap pos-relative d-flex w-full" data-img="/assets/images/kenny_mason/kenny_list_view.webp">
+                    <a class="list-item-block d-flex w-full" href="/campaign/kenny-mason.html" data-disable-on-mobile="true">
                         <div class="flex-1 d-flex padding-inline-20 sm:padding-inline-12 padding-block-8">
                             <div class="d-flex gap-8 sm:d-none"><span>02</span><span>Angel Eyes</span></div>
                             <button class="d-flex-column md:d-none mobile-active"><div class="nowrap">Scarlet By Doja Cat</div><div>(RCA Records)</div></button> 
                             </div>
                         <div class="flex-1 padding-block-8 sm:d-none">Kenny Mason</div>
-                        <div class="flex-1 padding-block-8 sm:d-none">Creative Strategy</div>
-                        <div class="flex-1 padding-block-8 sm:d-none">Def Jam</div>
-                        <div class="flex-1 padding-block-8 padding-inline-20"><div class="d-flex justify-between"><span class="sm:d-none">2022</span><span class="sm:d-none">View Campaign</span></div></div>
+                        <div class="flex-1 padding-block-8 sm:d-none">Marketing Strategy</div>
+                        <div class="flex-1 padding-block-8 sm:d-none">RCA Records</div>
+                        <div class="flex-1 padding-block-8 padding-inline-20"><div class="d-flex justify-between"><span class="sm:d-none">2024</span><span class="sm:d-none">View Campaign</span></div></div>
                     </a>
                         
                     <a class="md:d-none padding-inline-20 sm:padding-inline-12 padding-block-8" href=""><span class="nowrap font-size-11">View Campaign</span></a>
                     <div class="list-item-bg sm:d-none"></div>
                 </li>
 
-                <li class="list-item list-item-block-wrap pos-relative d-flex w-full" data-img="assets/images/def-jam.webp">
-                    <a class="list-item-block d-flex w-full" href="/doja-cat.html" data-disable-on-mobile="true">
+                <li class="list-item list-item-block-wrap pos-relative d-flex w-full" data-img="/assets/images/def-jam copy.webp">
+                    <a class="list-item-block d-flex w-full" href="#" data-disable-on-mobile="true">
                         <div class="flex-1 d-flex padding-inline-20 sm:padding-inline-12 padding-block-8">
-                            <div class="d-flex gap-8 sm:d-none"><span>03</span><span>Def Jam</span></div>
-                            <button class="d-flex-column md:d-none mobile-active"><div class="nowrap">Scarlet By Doja Cat</div><div>(RCA Records)</div></button> 
+                            <div class="d-flex gap-8 sm:d-none"><span>03</span><span>Ways Of Knowing</span></div>
+                            <button class="d-flex-column md:d-none mobile-active"><div class="nowrap">Ways Of Knowing by Navy Blue</div><div>(RCA Records)</div></button> 
                             </div>
-                        <div class="flex-1 padding-block-8 sm:d-none">Tyler The Creator</div>
-                        <div class="flex-1 padding-block-8 sm:d-none">Creative Strategy</div>
+                        <div class="flex-1 padding-block-8 sm:d-none">Navy Blue</div>
+                        <div class="flex-1 padding-block-8 sm:d-none">Photographer</div>
                         <div class="flex-1 padding-block-8 sm:d-none">Def Jam</div>
                         <div class="flex-1 padding-block-8 padding-inline-20">
                             <div class="d-flex justify-between">
-                            <span class="sm:d-none">2022</span>
+                            <span class="sm:d-none">2023</span>
                             <div class="d-flex gap-8">
                                 <div class="icon">
                                     <svg width="12" height="12" viewBox="0 0 24 24" fill="" xmlns="http://www.w3.org/2000/svg">
@@ -382,49 +383,49 @@
                 </li>
 
                 <li class="list-item list-item-block-wrap pos-relative d-flex w-full" data-img="assets/images/normani/normain_list_view.jpg">
-                    <a class="list-item-block d-flex w-full" href="/doja-cat.html" data-disable-on-mobile="true">
+                    <a class="list-item-block d-flex w-full" href="/campaign/normani.html" data-disable-on-mobile="true">
                         <div class="flex-1 d-flex padding-inline-20 sm:padding-inline-12 padding-block-8">
                             <div class="d-flex gap-8 sm:d-none"><span>04</span><span>Dopamine</span></div>
                             <button class="d-flex-column md:d-none mobile-active"><div class="nowrap">Scarlet By Doja Cat</div><div>(RCA Records)</div></button> 
                             </div>
                         <div class="flex-1 padding-block-8 sm:d-none">Normani</div>
-                        <div class="flex-1 padding-block-8 sm:d-none">Creative Strategy</div>
+                        <div class="flex-1 padding-block-8 sm:d-none">Marketing Strategy</div>
                         <div class="flex-1 padding-block-8 sm:d-none">RCA Records</div>
-                        <div class="flex-1 padding-block-8 padding-inline-20"><div class="d-flex justify-between"><span class="sm:d-none">2022</span><span class="sm:d-none">View Campaign</span></div></div>
+                        <div class="flex-1 padding-block-8 padding-inline-20"><div class="d-flex justify-between"><span class="sm:d-none">2024</span><span class="sm:d-none">View Campaign</span></div></div>
                     </a>
                         
                     <a class="md:d-none padding-inline-20 sm:padding-inline-12 padding-block-8" href=""><span class="nowrap font-size-11">View Campaign</span></a>
                     <div class="list-item-bg sm:d-none"></div>
                 </li>
 
-                <li class="list-item list-item-block-wrap pos-relative d-flex w-full" data-img="">
-                    <a class="list-item-block d-flex w-full" href="/doja-cat.html" data-disable-on-mobile="true">
+                <li class="list-item list-item-block-wrap pos-relative d-flex w-full" data-img="/assets/images/khalid/khalid_list_view.jpg">
+                    <a class="list-item-block d-flex w-full" href="/campaign/khalid.html" data-disable-on-mobile="true">
                         <div class="flex-1 d-flex padding-inline-20 sm:padding-inline-12 padding-block-8">
                             <div class="d-flex gap-8 sm:d-none"><span>05</span><span>Sincere</span></div>
                             <button class="d-flex-column md:d-none mobile-active"><div class="nowrap">Scarlet By Doja Cat</div><div>(RCA Records)</div></button> 
                             </div>
                         <div class="flex-1 padding-block-8 sm:d-none">Khalid</div>
-                        <div class="flex-1 padding-block-8 sm:d-none">Creative Strategy</div>
+                        <div class="flex-1 padding-block-8 sm:d-none">Marketing Strategy</div>
                         <div class="flex-1 padding-block-8 sm:d-none">RCA Records</div>
-                        <div class="flex-1 padding-block-8 padding-inline-20"><div class="d-flex justify-between"><span class="sm:d-none">2022</span><span class="sm:d-none">View Campaign</span></div></div>
+                        <div class="flex-1 padding-block-8 padding-inline-20"><div class="d-flex justify-between"><span class="sm:d-none">2024</span><span class="sm:d-none">View Campaign</span></div></div>
                     </a>
                         
                     <a class="md:d-none padding-inline-20 sm:padding-inline-12 padding-block-8" href=""><span class="nowrap font-size-11">View Campaign</span></a>
                     <div class="list-item-bg sm:d-none"></div>
                 </li>
 
-                <li class="list-item list-item-block-wrap pos-relative d-flex w-full" data-img="assets/images/doja_cat/scarlet_list_view.webp">
-                    <a class="list-item-block d-flex w-full" href="/doja-cat.html" data-disable-on-mobile="true">
+                <li class="list-item list-item-block-wrap pos-relative d-flex w-full" data-img="/assets/images/vogue.webp">
+                    <a class="list-item-block d-flex w-full" href="#" data-disable-on-mobile="true">
                         <div class="flex-1 d-flex padding-inline-20 sm:padding-inline-12 padding-block-8">
                             <div class="d-flex gap-8 sm:d-none"><span>06</span><span>Vogue</span></div>
                             <button class="d-flex-column md:d-none mobile-active"><div class="nowrap">Scarlet By Doja Cat</div><div>(RCA Records)</div></button> 
                             </div>
                         <div class="flex-1 padding-block-8 sm:d-none">Vogue</div>
-                        <div class="flex-1 padding-block-8 sm:d-none">Creative Strategy</div>
+                        <div class="flex-1 padding-block-8 sm:d-none">Creative Direction</div>
                         <div class="flex-1 padding-block-8 sm:d-none">Vogue</div>
                         <div class="flex-1 padding-block-8 padding-inline-20">
                             <div class="d-flex justify-between">
-                            <span class="sm:d-none">2022</span>
+                            <span class="sm:d-none">2023</span>
                             <div class="d-flex gap-8">
                                 <div class="icon">
                                     <svg width="12" height="12" viewBox="0 0 24 24" fill="" xmlns="http://www.w3.org/2000/svg">
@@ -441,46 +442,46 @@
                     <div class="list-item-bg sm:d-none"></div>
                 </li>
 
-                <li class="list-item list-item-block-wrap pos-relative d-flex w-full" data-img="">
-                    <a class="list-item-block d-flex w-full" href="/doja-cat.html" data-disable-on-mobile="true">
+                <li class="list-item list-item-block-wrap pos-relative d-flex w-full" data-img="/assets/images/foushee/foushee_slide_view.webp">
+                    <a class="list-item-block d-flex w-full" href="/campaign/foushee.html" data-disable-on-mobile="true">
                         <div class="flex-1 d-flex padding-inline-20 sm:padding-inline-12 padding-block-8">
                             <div class="d-flex gap-8 sm:d-none"><span>07</span><span>Pointy Heights</span></div>
                             <button class="d-flex-column md:d-none mobile-active"><div class="nowrap">Scarlet By Doja Cat</div><div>(RCA Records)</div></button> 
                             </div>
                         <div class="flex-1 padding-block-8 sm:d-none">Foushee</div>
-                        <div class="flex-1 padding-block-8 sm:d-none">Creative Strategy</div>
+                        <div class="flex-1 padding-block-8 sm:d-none">Marketing Strategy</div>
                         <div class="flex-1 padding-block-8 sm:d-none">RCA Records</div>
-                        <div class="flex-1 padding-block-8 padding-inline-20"><div class="d-flex justify-between"><span class="sm:d-none">2022</span><span class="sm:d-none">View Campaign</span></div></div>
+                        <div class="flex-1 padding-block-8 padding-inline-20"><div class="d-flex justify-between"><span class="sm:d-none">2024</span><span class="sm:d-none">View Campaign</span></div></div>
                     </a>
                         
                     <a class="md:d-none padding-inline-20 sm:padding-inline-12 padding-block-8" href=""><span class="nowrap font-size-11">View Campaign</span></a>
                     <div class="list-item-bg sm:d-none"></div>
                 </li>
 
-                <li class="list-item list-item-block-wrap pos-relative d-flex w-full" data-img="">
-                    <a class="list-item-block d-flex w-full" href="/doja-cat.html" data-disable-on-mobile="true">
+                <li class="list-item list-item-block-wrap pos-relative d-flex w-full" data-img="/assets/images/lisa/pm_05-shot5_1011 copy.webp">
+                    <a class="list-item-block d-flex w-full" href="/campaign/lisa.html" data-disable-on-mobile="true">
                         <div class="flex-1 d-flex padding-inline-20 sm:padding-inline-12 padding-block-8">
                             <div class="d-flex gap-8 sm:d-none"><span>08</span><span>Alter Ego</span></div>
                             <button class="d-flex-column md:d-none mobile-active"><div class="nowrap">Scarlet By Doja Cat</div><div>(RCA Records)</div></button> 
                             </div>
                         <div class="flex-1 padding-block-8 sm:d-none">Lisa</div>
-                        <div class="flex-1 padding-block-8 sm:d-none">Creative Strategy</div>
+                        <div class="flex-1 padding-block-8 sm:d-none">Marketing Strategy</div>
                         <div class="flex-1 padding-block-8 sm:d-none">RCA Records</div>
-                        <div class="flex-1 padding-block-8 padding-inline-20"><div class="d-flex justify-between"><span class="sm:d-none">2022</span><span class="sm:d-none">View Campaign</span></div></div>
+                        <div class="flex-1 padding-block-8 padding-inline-20"><div class="d-flex justify-between"><span class="sm:d-none">2025</span><span class="sm:d-none">View Campaign</span></div></div>
                     </a>
                         
                     <a class="md:d-none padding-inline-20 sm:padding-inline-12 padding-block-8" href=""><span class="nowrap font-size-11">View Campaign</span></a>
                     <div class="list-item-bg sm:d-none"></div>
                 </li>
                 
-                <li class="list-item list-item-block-wrap pos-relative d-flex w-full" data-img="assets/images/kenny_mason/kenny_list_view.webp">
-                    <a class="list-item-block d-flex w-full" href="/doja-cat.html" data-disable-on-mobile="true">
+                <li class="list-item list-item-block-wrap pos-relative d-flex w-full" data-img="/assets/images/jbl.webp">
+                    <a class="list-item-block d-flex w-full" href="#" data-disable-on-mobile="true">
                         <div class="flex-1 d-flex padding-inline-20 sm:padding-inline-12 padding-block-8">
                             <div class="d-flex gap-8 sm:d-none"><span>09</span><span>JBL</span></div>
                             <button class="d-flex-column md:d-none mobile-active"><div class="nowrap">Scarlet By Doja Cat</div><div>(RCA Records)</div></button> 
                             </div>
                         <div class="flex-1 padding-block-8 sm:d-none">JBL</div>
-                        <div class="flex-1 padding-block-8 sm:d-none">Creative Strategy</div>
+                        <div class="flex-1 padding-block-8 sm:d-none">Photographer</div>
                         <div class="flex-1 padding-block-8 sm:d-none">JBL</div>
                         <div class="flex-1 padding-block-8 padding-inline-20">
                             <div class="d-flex justify-between">
@@ -501,24 +502,24 @@
                     <div class="list-item-bg sm:d-none"></div>
                 </li>
 
-                <li class="list-item list-item-block-wrap pos-relative d-flex w-full" data-img="">
-                    <a class="list-item-block d-flex w-full" href="/doja-cat.html" data-disable-on-mobile="true">
+                <li class="list-item list-item-block-wrap pos-relative d-flex w-full" data-img="/assets/images/gambino/IMG_2120.JPG">
+                    <a class="list-item-block d-flex w-full" href="/campaign/gambino.html" data-disable-on-mobile="true">
                         <div class="flex-1 d-flex padding-inline-20 sm:padding-inline-12 padding-block-8">
                             <div class="d-flex gap-8 sm:d-none"><span>10</span><span>Bando Stone & The New World</span></div>
                             <button class="d-flex-column md:d-none mobile-active"><div class="nowrap">Scarlet By Doja Cat</div><div>(RCA Records)</div></button> 
                             </div>
                         <div class="flex-1 padding-block-8 sm:d-none">Gambino</div>
-                        <div class="flex-1 padding-block-8 sm:d-none">Creative Strategy</div>
+                        <div class="flex-1 padding-block-8 sm:d-none">Marketing Strategy</div>
                         <div class="flex-1 padding-block-8 sm:d-none">RCA Records</div>
-                        <div class="flex-1 padding-block-8 padding-inline-20"><div class="d-flex justify-between"><span class="sm:d-none">2022</span><span class="sm:d-none">View Campaign</span></div></div>
+                        <div class="flex-1 padding-block-8 padding-inline-20"><div class="d-flex justify-between"><span class="sm:d-none">2024</span><span class="sm:d-none">View Campaign</span></div></div>
                     </a>
                         
                     <a class="md:d-none padding-inline-20 sm:padding-inline-12 padding-block-8" href=""><span class="nowrap font-size-11">View Campaign</span></a>
                     <div class="list-item-bg sm:d-none"></div>
                 </li>
 
-                <li class="list-item list-item-block-wrap pos-relative d-flex w-full" data-img="assets/images/doja_cat/scarlet_list_view.webp">
-                    <a class="list-item-block d-flex w-full" href="/doja-cat.html" data-disable-on-mobile="true">
+                <li class="list-item list-item-block-wrap pos-relative d-flex w-full" data-img="/assets/images/chinatown_2.jpg">
+                    <a class="list-item-block d-flex w-full" href="#" data-disable-on-mobile="true">
                         <div class="flex-1 d-flex padding-inline-20 sm:padding-inline-12 padding-block-8">
                             <div class="d-flex gap-8 sm:d-none"><span>11</span><span>Canon</span></div>
                             <button class="d-flex-column md:d-none mobile-active"><div class="nowrap">Scarlet By Doja Cat</div><div>(RCA Records)</div></button> 
@@ -528,7 +529,7 @@
                         <div class="flex-1 padding-block-8 sm:d-none">Canon</div>
                         <div class="flex-1 padding-block-8 padding-inline-20">
                             <div class="d-flex justify-between">
-                            <span class="sm:d-none">2022</span>
+                            <span class="sm:d-none">2024</span>
                             <div class="d-flex gap-8">
                                 <div class="icon">
                                     <svg width="12" height="12" viewBox="0 0 24 24" fill="" xmlns="http://www.w3.org/2000/svg">
@@ -545,16 +546,16 @@
                     <div class="list-item-bg sm:d-none"></div>
                 </li>
 
-                <li class="list-item list-item-block-wrap pos-relative d-flex w-full" data-img="">
-                    <a class="list-item-block d-flex w-full" href="/doja-cat.html" data-disable-on-mobile="true">
+                <li class="list-item list-item-block-wrap pos-relative d-flex w-full" data-img="/assets/images/lucky_daye/IMG_2132.JPG">
+                    <a class="list-item-block d-flex w-full" href="/campaign/lucky-daye.html" data-disable-on-mobile="true">
                         <div class="flex-1 d-flex padding-inline-20 sm:padding-inline-12 padding-block-8">
                             <div class="d-flex gap-8 sm:d-none"><span>12</span><span>Algorithm</span></div>
                             <button class="d-flex-column md:d-none mobile-active"><div class="nowrap">Scarlet By Doja Cat</div><div>(RCA Records)</div></button> 
                             </div>
                         <div class="flex-1 padding-block-8 sm:d-none">Lucky Daye</div>
-                        <div class="flex-1 padding-block-8 sm:d-none">Creative Strategy</div>
+                        <div class="flex-1 padding-block-8 sm:d-none">Marketing Strategy</div>
                         <div class="flex-1 padding-block-8 sm:d-none">RCA Records</div>
-                        <div class="flex-1 padding-block-8 padding-inline-20"><div class="d-flex justify-between"><span class="sm:d-none">2022</span><span class="sm:d-none">View Campaign</span></div></div>
+                        <div class="flex-1 padding-block-8 padding-inline-20"><div class="d-flex justify-between"><span class="sm:d-none">2024</span><span class="sm:d-none">View Campaign</span></div></div>
                     </a>
                         
                     <a class="md:d-none padding-inline-20 sm:padding-inline-12 padding-block-8" href=""><span class="nowrap font-size-11">View Campaign</span></a>
@@ -576,28 +577,28 @@
         <div class="w-screen h-50 pos-relative overflow-y d-flex-column">
             <ul class="flex-1 w-full overflow-y padding-inline-12 z-max">
 
-                <li class="mobile-list-item d-flex flex-1 padding-block-8 align-center" data-img="assets/images/normani/normani_slider_view.avif">
+                <li class="mobile-list-item d-flex flex-1 padding-block-8 align-center" data-img="assets/images/normani/normani_2.webp">
                     <div class="font-size-13 d-flex-column flex-1">
                        <div>Dopamine by Normani</div>
                        <div class=" font-size-10 d-flex gap-4"><span>[</span>RCA Records<span>]</span></div>
                     </div>
-                    <a class="w-fit font-size-13 h-fit" href="">View Campaign</a>
+                    <a class="w-fit font-size-13 h-fit" href="/campaign/normani.html">View Campaign</a>
                 </li>
 
-                <li class="mobile-list-item  d-flex flex-1 padding-block-8 align-center" data-img="assets/images/doja_cat/scarlet_list_view.avif">
+                <li class="mobile-list-item  d-flex flex-1 padding-block-8 align-center" data-img="assets/images/doja_cat/list-view.avif">
                     <div class="font-size-13 d-flex-column flex-1">
                        <div>Scarlet by Doja</div>
                        <div class=" font-size-10 d-flex gap-4"><span>[</span>RCA Records<span>]</span></div>
                     </div>
-                    <a class="w-fit font-size-13 h-fit" href="">View Campaign</a>
+                    <a class="w-fit font-size-13 h-fit" href="/campaign/doja-cat.html">View Campaign</a>
                 </li>
 
                 <li class="mobile-list-item d-flex flex-1 padding-block-8 align-center" data-img="assets/images/collaborations/def-jam.avif">
                     <div class="font-size-13 d-flex-column flex-1">
-                       <div>Tyler The Creator</div>
+                       <div>Navy Blue</div>
                        <div class=" font-size-10 d-flex gap-4"><span>[</span>Def Jam<span>]</span></div>
                     </div>
-                    <a class="w-fit font-size-13 h-fit d-flex gap-4 mobile-inactive" href=""><div class="icon">
+                    <a class="w-fit font-size-13 h-fit d-flex gap-4 mobile-inactive" href="#"><div class="icon">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 9V6.5C7.5 5.30653 7.97411 4.16193 8.81802 3.31802C9.66194 2.47411 10.8065 2 12 2C13.1935 2 14.3381 2.47411 15.182 3.31802C16.0259 4.16193 16.5 5.30653 16.5 6.5V9H19C19.265 9 19.5192 9.10522 19.7068 9.29254C19.8943 9.47986 19.9997 9.73396 20 9.999V21C20.0004 21.1314 19.9748 21.2616 19.9247 21.3832C19.8746 21.5047 19.8009 21.6151 19.708 21.708C19.6151 21.8009 19.5047 21.8746 19.3832 21.9247C19.2617 21.9748 19.1314 22.0004 19 22H5C4.73496 22 4.48076 21.8948 4.29325 21.7075C4.10574 21.5201 4.00027 21.266 4 21.001V10C3.99961 9.86857 4.0252 9.73835 4.07532 9.61685C4.12543 9.49534 4.19908 9.38495 4.29201 9.29201C4.38495 9.19907 4.49535 9.12543 4.61685 9.07531C4.73836 9.0252 4.86857 8.9996 5 9H7.5ZM9 9H15V6.5C15 5.70435 14.6839 4.94129 14.1213 4.37868C13.5587 3.81607 12.7957 3.5 12 3.5C11.2044 3.5 10.4413 3.81607 9.87868 4.37868C9.31607 4.94129 9 5.70435 9 6.5V9ZM11.4 15.875V18H12.6V15.875C12.9158 15.7372 13.1746 15.4948 13.3327 15.1886C13.4909 14.8824 13.5388 14.5311 13.4684 14.1938C13.398 13.8564 13.2135 13.5536 12.9461 13.3362C12.6787 13.1189 12.3446 13.0002 12 13.0002C11.6554 13.0002 11.3213 13.1189 11.0539 13.3362C10.7865 13.5536 10.6021 13.8564 10.5316 14.1938C10.4612 14.5311 10.5091 14.8824 10.6673 15.1886C10.8254 15.4948 11.0842 15.7372 11.4 15.875Z" fill="currentColor"/>
                             </svg>
@@ -605,21 +606,21 @@
                     </div></a>
                 </li>
 
-                <li class="mobile-list-item d-flex flex-1 padding-block-8 align-center" data-img="assets/images/kenny_mason/kenny_list_view.avif">
+                <li class="mobile-list-item d-flex flex-1 padding-block-8 align-center" data-img="assets/images/kenny_mason/ae_2.avif">
                     <div class="font-size-13 d-flex-column flex-1">
                        <div>Angel Eyes by Kenny Mason</div>
                        <div class=" font-size-10 d-flex gap-4"><span>[</span>RCA Records<span>]</span></div>
                     </div>
-                    <a class="w-fit font-size-13 h-fit" href="">View Campaign</a>
+                    <a class="w-fit font-size-13 h-fit" href="/campaign/kenny-mason.html">View Campaign</a>
                 </li>
 
 
-                <li class="mobile-list-item d-flex flex-1 padding-block-8 align-center" data-img="assets/images/collaborations/canon.avif">
+                <li class="mobile-list-item d-flex flex-1 padding-block-8 align-center" data-img="assets/images/chinatown_1.avif">
                     <div class="font-size-13 d-flex-column flex-1">
-                       <div>Dopamine by Normani</div>
+                       <div>Canon Chinatown LA</div>
                        <div class=" font-size-10 d-flex gap-4"><span>[</span>Canon<span>]</span></div>
                     </div>
-                    <a class="w-fit font-size-13 h-fit d-flex gap-4 mobile-inactive" href=""><div class="icon">
+                    <a class="w-fit font-size-13 h-fit d-flex gap-4 mobile-inactive" href="#"><div class="icon">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 9V6.5C7.5 5.30653 7.97411 4.16193 8.81802 3.31802C9.66194 2.47411 10.8065 2 12 2C13.1935 2 14.3381 2.47411 15.182 3.31802C16.0259 4.16193 16.5 5.30653 16.5 6.5V9H19C19.265 9 19.5192 9.10522 19.7068 9.29254C19.8943 9.47986 19.9997 9.73396 20 9.999V21C20.0004 21.1314 19.9748 21.2616 19.9247 21.3832C19.8746 21.5047 19.8009 21.6151 19.708 21.708C19.6151 21.8009 19.5047 21.8746 19.3832 21.9247C19.2617 21.9748 19.1314 22.0004 19 22H5C4.73496 22 4.48076 21.8948 4.29325 21.7075C4.10574 21.5201 4.00027 21.266 4 21.001V10C3.99961 9.86857 4.0252 9.73835 4.07532 9.61685C4.12543 9.49534 4.19908 9.38495 4.29201 9.29201C4.38495 9.19907 4.49535 9.12543 4.61685 9.07531C4.73836 9.0252 4.86857 8.9996 5 9H7.5ZM9 9H15V6.5C15 5.70435 14.6839 4.94129 14.1213 4.37868C13.5587 3.81607 12.7957 3.5 12 3.5C11.2044 3.5 10.4413 3.81607 9.87868 4.37868C9.31607 4.94129 9 5.70435 9 6.5V9ZM11.4 15.875V18H12.6V15.875C12.9158 15.7372 13.1746 15.4948 13.3327 15.1886C13.4909 14.8824 13.5388 14.5311 13.4684 14.1938C13.398 13.8564 13.2135 13.5536 12.9461 13.3362C12.6787 13.1189 12.3446 13.0002 12 13.0002C11.6554 13.0002 11.3213 13.1189 11.0539 13.3362C10.7865 13.5536 10.6021 13.8564 10.5316 14.1938C10.4612 14.5311 10.5091 14.8824 10.6673 15.1886C10.8254 15.4948 11.0842 15.7372 11.4 15.875Z" fill="currentColor"/>
                             </svg>
@@ -629,10 +630,10 @@
 
                 <li class="mobile-list-item d-flex flex-1 padding-block-8 align-center" data-img="assets/images/collaborations/vogue.avif">
                     <div class="font-size-13 d-flex-column flex-1">
-                       <div>Dopamine by Normani</div>
+                       <div>Vogue for Vogue Photo</div>
                        <div class=" font-size-10 d-flex gap-4"><span>[</span>Vogue<span>]</span></div>
                     </div>
-                    <a class="w-fit font-size-13 h-fit d-flex gap-4 mobile-inactive" href=""><div class="icon">
+                    <a class="w-fit font-size-13 h-fit d-flex gap-4 mobile-inactive" href="#"><div class="icon">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 9V6.5C7.5 5.30653 7.97411 4.16193 8.81802 3.31802C9.66194 2.47411 10.8065 2 12 2C13.1935 2 14.3381 2.47411 15.182 3.31802C16.0259 4.16193 16.5 5.30653 16.5 6.5V9H19C19.265 9 19.5192 9.10522 19.7068 9.29254C19.8943 9.47986 19.9997 9.73396 20 9.999V21C20.0004 21.1314 19.9748 21.2616 19.9247 21.3832C19.8746 21.5047 19.8009 21.6151 19.708 21.708C19.6151 21.8009 19.5047 21.8746 19.3832 21.9247C19.2617 21.9748 19.1314 22.0004 19 22H5C4.73496 22 4.48076 21.8948 4.29325 21.7075C4.10574 21.5201 4.00027 21.266 4 21.001V10C3.99961 9.86857 4.0252 9.73835 4.07532 9.61685C4.12543 9.49534 4.19908 9.38495 4.29201 9.29201C4.38495 9.19907 4.49535 9.12543 4.61685 9.07531C4.73836 9.0252 4.86857 8.9996 5 9H7.5ZM9 9H15V6.5C15 5.70435 14.6839 4.94129 14.1213 4.37868C13.5587 3.81607 12.7957 3.5 12 3.5C11.2044 3.5 10.4413 3.81607 9.87868 4.37868C9.31607 4.94129 9 5.70435 9 6.5V9ZM11.4 15.875V18H12.6V15.875C12.9158 15.7372 13.1746 15.4948 13.3327 15.1886C13.4909 14.8824 13.5388 14.5311 13.4684 14.1938C13.398 13.8564 13.2135 13.5536 12.9461 13.3362C12.6787 13.1189 12.3446 13.0002 12 13.0002C11.6554 13.0002 11.3213 13.1189 11.0539 13.3362C10.7865 13.5536 10.6021 13.8564 10.5316 14.1938C10.4612 14.5311 10.5091 14.8824 10.6673 15.1886C10.8254 15.4948 11.0842 15.7372 11.4 15.875Z" fill="currentColor"/>
                             </svg>
@@ -640,12 +641,12 @@
                     </div></a>
                 </li>
 
-                <li class="mobile-list-item d-flex flex-1 padding-block-8 align-center" data-img="assets/images/khalid/khalid_list_view.jpg">
+                <li class="mobile-list-item d-flex flex-1 padding-block-8 align-center" data-img="assets/images/khalid/khalid_slide_view.avif">
                     <div class="font-size-13 d-flex-column flex-1">
                        <div>Sincere by Khalid</div>
                        <div class=" font-size-10 d-flex gap-4"><span>[</span>RCA Records<span>]</span></div>
                     </div>
-                    <a class="w-fit font-size-13 h-fit" href="">View Campaign</a>
+                    <a class="w-fit font-size-13 h-fit" href="/campaign/khalid.html">View Campaign</a>
                 </li>
 
                 <li class="mobile-list-item d-flex flex-1 padding-block-8 align-center" data-img="assets/images/lisa/lisa_list_view.avif">
@@ -653,7 +654,7 @@
                        <div>Alter Ego By Lisa</div>
                        <div class=" font-size-10 d-flex gap-4"><span>[</span>RCA Records<span>]</span></div>
                     </div>
-                    <a class="w-fit font-size-13 h-fit" href="">View Campaign</a>
+                    <a class="w-fit font-size-13 h-fit" href="/campaign/lisa.html">View Campaign</a>
                 </li>
 
                 <li class="mobile-list-item d-flex flex-1 padding-block-8 align-center" data-img="assets/images/foushee/foushee_slide_view.avif">
@@ -661,15 +662,15 @@
                        <div>Pointy Heights by Foushee</div>
                        <div class=" font-size-10 d-flex gap-4"><span>[</span>RCA Records<span>]</span></div>
                     </div>
-                    <a class="w-fit font-size-13 h-fit" href="">View Campaign</a>
+                    <a class="w-fit font-size-13 h-fit" href="/campaign/foushee.html">View Campaign</a>
                 </li>
 
                 <li class="mobile-list-item d-flex flex-1 padding-block-8 align-center" data-img="assets/images/collaborations/jbl.avif">
                     <div class="font-size-13 d-flex-column flex-1">
-                       <div>Scarlet by doja cat</div>
+                       <div>JBL for Summer Bash</div>
                        <div class=" font-size-10 d-flex gap-4"><span>[</span>JBL<span>]</span></div>
                     </div>
-                    <a class="w-fit font-size-13 h-fit d-flex gap-4 mobile-inactive" href=""><div class="icon">
+                    <a class="w-fit font-size-13 h-fit d-flex gap-4 mobile-inactive" href="#"><div class="icon">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 9V6.5C7.5 5.30653 7.97411 4.16193 8.81802 3.31802C9.66194 2.47411 10.8065 2 12 2C13.1935 2 14.3381 2.47411 15.182 3.31802C16.0259 4.16193 16.5 5.30653 16.5 6.5V9H19C19.265 9 19.5192 9.10522 19.7068 9.29254C19.8943 9.47986 19.9997 9.73396 20 9.999V21C20.0004 21.1314 19.9748 21.2616 19.9247 21.3832C19.8746 21.5047 19.8009 21.6151 19.708 21.708C19.6151 21.8009 19.5047 21.8746 19.3832 21.9247C19.2617 21.9748 19.1314 22.0004 19 22H5C4.73496 22 4.48076 21.8948 4.29325 21.7075C4.10574 21.5201 4.00027 21.266 4 21.001V10C3.99961 9.86857 4.0252 9.73835 4.07532 9.61685C4.12543 9.49534 4.19908 9.38495 4.29201 9.29201C4.38495 9.19907 4.49535 9.12543 4.61685 9.07531C4.73836 9.0252 4.86857 8.9996 5 9H7.5ZM9 9H15V6.5C15 5.70435 14.6839 4.94129 14.1213 4.37868C13.5587 3.81607 12.7957 3.5 12 3.5C11.2044 3.5 10.4413 3.81607 9.87868 4.37868C9.31607 4.94129 9 5.70435 9 6.5V9ZM11.4 15.875V18H12.6V15.875C12.9158 15.7372 13.1746 15.4948 13.3327 15.1886C13.4909 14.8824 13.5388 14.5311 13.4684 14.1938C13.398 13.8564 13.2135 13.5536 12.9461 13.3362C12.6787 13.1189 12.3446 13.0002 12 13.0002C11.6554 13.0002 11.3213 13.1189 11.0539 13.3362C10.7865 13.5536 10.6021 13.8564 10.5316 14.1938C10.4612 14.5311 10.5091 14.8824 10.6673 15.1886C10.8254 15.4948 11.0842 15.7372 11.4 15.875Z" fill="currentColor"/>
                             </svg>
@@ -677,12 +678,12 @@
                     </div></a>
                 </li>
 
-                <li class="mobile-list-item d-flex flex-1 padding-block-8 align-center" data-img="assets/images/lucky_daye/lucky_daye_list_view.jpg">
+                <li class="mobile-list-item d-flex flex-1 padding-block-8 align-center" data-img="assets/images/lucky_daye/40130-4-007-048_B.avif">
                     <div class="font-size-13 d-flex-column flex-1">
                        <div>Algorithm by Lucky Daye</div>
                        <div class=" font-size-10 d-flex gap-4"><span>[</span>RCA Records<span>]</span></div>
                     </div>
-                    <a class="w-fit font-size-13 h-fit" href="">View Campaign</a>
+                    <a class="w-fit font-size-13 h-fit" href="/campaign/lucky-daye.html">View Campaign</a>
                 </li>
 
                 <li class="mobile-list-item d-flex flex-1 padding-block-8 align-center" data-img="assets/images/gambino/gambino_slide_view.jpg">
@@ -690,7 +691,7 @@
                        <div>Bando Stone & The New World <br> By Gambino</div>
                        <div class=" font-size-10 d-flex gap-4"><span>[</span>RCA Records<span>]</span></div>
                     </div>
-                    <a class="w-fit font-size-13 h-fit" href="">View Campaign</a>
+                    <a class="w-fit font-size-13 h-fit" href="/campaign/gambino.html">View Campaign</a>
                 </li>
             </ul>
             <div class="scroll-indicator d-flex z-max justify-center padding-block-12">
@@ -706,12 +707,12 @@
            
     </div>
 
-    <div class="footer w-screen d-flex justify-between pos-fixed bottom-0 padding-inline-20 font-size-11 padding-block-12">
-        <div>@ByNickAnderson</div>
-        <ul class="social-links d-flex gap-8">
+    <div class="footer w-screen d-flex justify-between pos-fixed bottom-0 padding-inline-20 font-size-11 padding-block-12 sm:d-none">
+        <div class="d-none">@2025ByNickAnderson</div>
+        <ul class="social-links d-flex gap-8 absolute-center">
             <li><a href="">Spotify</a></li>
-            <li><a href="">Spotify</a></li>
-            <li><a href="">Spotify</a></li>
+            <li><a href="">LinkedIn</a></li>
+            <li><a href="">Instagram</a></li>
         </ul>
         <div class="d-flex gap-4"><span>Los Angeles, CA</span><span>02:09:17 PM</span></div>
     </div>
@@ -721,6 +722,7 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="about.js"></script>
 
 
     
