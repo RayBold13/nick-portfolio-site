@@ -5,6 +5,98 @@ document.addEventListener('DOMContentLoaded', () => {
   let sliderEventListeners = [];
   let navigationListeners = [];
 
+ 
+  // --- About Overlay Functionality ---
+function initializeAboutOverlay() {
+  const overlay = document.querySelector('.about-overlay');
+  const img = overlay?.querySelector('img');
+  const textElements = overlay?.querySelectorAll('.text-reveal');
+  const aboutButton = document.getElementById('open');
+  const closeButton = document.getElementById('close');
+
+  if (!overlay || !aboutButton) {
+    console.log('About overlay elements not found, skipping...');
+    return;
+  }
+
+  // Set initial styles (overlay is hidden by CSS)
+  gsap.set(overlay, {
+    clipPath: 'polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)'
+  });
+
+  if (img) {
+    gsap.set(img, {
+      clipPath: 'polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)',
+    });
+  }
+
+  if (textElements && textElements.length > 0) {
+    gsap.set(textElements, {
+      opacity: 0,
+      y: 20
+    });
+  }
+
+  // Create timeline (paused initially)
+  const aboutTL = gsap.timeline({ 
+    paused: true,
+    onStart: () => {
+      // Show overlay when animation starts
+      overlay.style.display = 'flex';
+    },
+    onReverseComplete: () => {
+      // Hide overlay when reverse animation completes
+      overlay.style.display = 'none';
+    }
+  });
+
+  aboutTL
+    .to(overlay, {
+      clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+      duration: 1.5,
+      ease: 'power2.out'
+    });
+
+  if (img) {
+    aboutTL.to(img, {
+      clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+      duration: 0.8,
+      ease: 'power2.out'
+    }, "-=1.24");
+  }
+
+  if (textElements && textElements.length > 0) {
+    aboutTL.to(textElements, {
+      opacity: 1,
+      y: 0,
+      duration: 0.6,
+      ease: 'power2.out',
+      stagger: 0.05
+    }, "-=0.6");
+  }
+
+  // Event handlers
+  const aboutClickHandler = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    aboutTL.play();
+  };
+
+  const closeClickHandler = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    aboutTL.reverse();
+  };
+
+  // Add tracked listeners
+  addTrackedListener(aboutButton, 'click', aboutClickHandler);
+  if (closeButton) {
+    addTrackedListener(closeButton, 'click', closeClickHandler);
+  }
+
+  console.log('About overlay initialized successfully');
+}
+
   // --- Entry Transition ---
   function runEntryTransition() {
     return new Promise(resolve => {
@@ -64,8 +156,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     sliderEventListeners = [];
     
-    // Kill all GSAP animations
-    gsap.killTweensOf("*");
+    // Kill all GSAP animations (but preserve about overlay if it exists)
+    const overlay = document.querySelector('.about-overlay');
+    if (overlay) {
+      gsap.killTweensOf("*", { exclude: overlay });
+    } else {
+      gsap.killTweensOf("*");
+    }
   }
 
   // Helper to add tracked event listeners
@@ -81,13 +178,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // Clean up first
     cleanupEventListeners();
 
+    // Initialize About overlay
+    initializeAboutOverlay();
+
     // Example: btnList logic for small screen padding adjustment
     const btnList = document.getElementById('btn-list');
     const projectHeader = document.querySelector('.project-header');
     if (btnList) {
       const btnListHandler = () => {
         if (window.innerWidth <= 635) {
-          projectHeader.classList.add('sm:padding-inline-12', 'sm:fixed-top-100');
+          projectHeader?.classList.add('sm:padding-inline-12', 'sm:fixed-top-100');
         }
       };
       addTrackedListener(btnList, 'click', btnListHandler);
@@ -146,8 +246,8 @@ document.addEventListener('DOMContentLoaded', () => {
             listView.classList.add("is-hidden");
             sliderView.classList.remove("is-hidden");
 
-            const slideEls = document.querySelectorAll(".slide");
-            const slideInfos = document.querySelectorAll(".slide-info");
+            const slideEls = document.querySelectorAll("#sliderView .slide");
+            const slideInfos = document.querySelectorAll("#sliderView .slide-info");
 
             const revealTl = gsap.timeline();
             revealTl.set(slideEls, { clipPath: "polygon(0% 50%, 100% 50%, 100% 50%, 0% 50%)" });
@@ -165,7 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
               duration: 0.3,
               stagger: 0.05,
               ease: "power2.out"
-            }, ">-3.48");
+            }, ">-0.8");
 
             btnSlider.classList.add("is-active");
             btnList2.classList.remove("is-active");
@@ -202,16 +302,13 @@ document.addEventListener('DOMContentLoaded', () => {
       addTrackedListener(btnList2, 'click', btnListHandler);
     }
 
-    // Rest of your slider initialization code...
+    // Initialize slider logic
     initializeSliderLogic();
   }
 
-  // Separate slider logic to make it cleaner
+  // Slider logic
   function initializeSliderLogic() {
-    // All your slider code here (moved from originalInitializeMain for clarity)
-    // ... (keep all the slider state, animation, and event handling code)
-    
-    // Preload hover images and background image logic
+    // Preload hover images
     function preloadHoverImages() {
       const listItems = document.querySelectorAll('.list-item');
       listItems.forEach(item => {
@@ -248,17 +345,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (bgImg && listItems.length) {
-      let preloadCache = {};
-
-      listItems.forEach(item => {
-        const imageUrl = item.getAttribute('data-img');
-        if (imageUrl) {
-          const img = new Image();
-          img.src = imageUrl;
-          preloadCache[imageUrl] = img;
-        }
-      });
-
       listItems.forEach(item => {
         const imageUrl = item.getAttribute('data-img');
 
@@ -297,7 +383,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeInfiniteScrollCarousel();
   }
 
-  // Separate the infinite scroll logic
+  // Infinite scroll carousel
   function initializeInfiniteScrollCarousel() {
     const isMobile = window.innerWidth <= 768;
     const config = {
@@ -471,7 +557,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function initializeEventListeners() {
-      const slider = document.querySelector(".slider");
+      const slider = document.querySelector("#sliderView"); // Fixed: use #sliderView instead of .slider
       if (!slider) {
         console.warn("Slider container missing");
         return;
@@ -492,7 +578,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function preventClickWhileDragging() {
-      const slides = document.querySelectorAll(".slide");
+      const slides = document.querySelectorAll("#sliderView .slide"); // Fixed: use #sliderView
       slides.forEach(slide => {
         const clickHandler = (e) => {
           if (state.hasActuallyDragged) {
@@ -530,6 +616,9 @@ document.addEventListener('DOMContentLoaded', () => {
   function initializeMobileListView() {
     // Clean up any existing mobile animations
     gsap.killTweensOf('.mobile-list-item');
+    
+    // Initialize About overlay for mobile too
+    initializeAboutOverlay();
     
     const mobileListView = document.getElementById('mobileListView');
     const mobileListItems = document.querySelectorAll('.mobile-list-item');
@@ -698,4 +787,3 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   
 });
-

@@ -676,8 +676,9 @@ p{
 }
 
 
-
-
+.about-overlay{
+    display: none;
+}
 .grid-about{
     display: grid;
     column-gap: var(--spacing-20);
