@@ -683,7 +683,7 @@ p{
 
 
 .about-overlay{
-    display: flex;
+    display: none ;
     height: 100dvh;
     width: 100vw;
     background-color: var(--color-bg-inverse);
@@ -694,6 +694,15 @@ p{
     overflow-y: scroll;
 
 }
+
+.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    display: none !important;
+  }
+
+
 
 .overlay-info-container{
     display: flex;
@@ -1365,7 +1374,7 @@ body:has([data-cursor]:hover) .cursor {
     flex: 1 1 351px;
 }
 
-.is-hidden{display: none !important;}
+
 .project-hero-img{height: 468px; border-radius: 4px;}
 
 
