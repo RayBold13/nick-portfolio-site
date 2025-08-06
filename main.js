@@ -1,4 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Hide elements immediately to prevent flash - SET INITIAL STATES RIGHT AWAY
+  const overlay = document.querySelector('.about-overlay');
+  const listView = document.getElementById('listView');
+  const sliderView = document.getElementById('sliderView');
+  const mobileListView = document.getElementById('mobileListView');
+  const isMobile = window.innerWidth <= 650;
+  
+  if (overlay) overlay.style.display = 'none';
+  
+  // Set correct initial view visibility immediately
+  if (isMobile) {
+    if (listView) listView.style.display = 'none';
+    if (sliderView) sliderView.style.display = 'none';
+    if (mobileListView) mobileListView.style.display = 'flex';
+  } else {
+    if (mobileListView) mobileListView.style.display = 'none';
+    // For desktop, check which view should be active based on button state
+    const btnSlider = document.getElementById("btn-slider");
+    const btnList = document.getElementById("btn-list");
+    
+    if (btnSlider && btnSlider.classList.contains('is-active')) {
+      if (sliderView) sliderView.style.display = 'block';
+      if (listView) listView.style.display = 'none';
+    } else {
+      if (listView) listView.style.display = 'block';
+      if (sliderView) sliderView.style.display = 'none';
+    }
+  }
+  
   // Global state to track initialization
   let isInitialized = false;
   let currentBreakpoint = null;
@@ -662,14 +691,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const listView = document.getElementById('listView');
     const isMobile = window.innerWidth <= 650;
 
-    if (mobileListView) {
-      mobileListView.style.display = isMobile ? 'flex' : 'none';
-    }
-    if (sliderView) {
-      sliderView.style.display = isMobile ? 'none' : 'block';
-    }
-    if (listView) {
-      listView.style.display = isMobile ? 'none' : 'block';
+    if (isMobile) {
+      if (mobileListView) mobileListView.style.display = 'flex';
+      if (sliderView) sliderView.style.display = 'none';
+      if (listView) listView.style.display = 'none';
+    } else {
+      if (mobileListView) mobileListView.style.display = 'none';
+      
+      // For desktop, check button states to determine which view should be visible
+      const btnSlider = document.getElementById("btn-slider");
+      const isSliderActive = btnSlider && btnSlider.classList.contains('is-active');
+      
+      if (isSliderActive) {
+        if (sliderView) sliderView.style.display = 'block';
+        if (listView) listView.style.display = 'none';
+      } else {
+        if (listView) listView.style.display = 'block';
+        if (sliderView) sliderView.style.display = 'none';
+      }
     }
   }
 
