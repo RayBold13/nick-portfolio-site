@@ -1,25 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Hide elements immediately to prevent flash - SIMPLE INITIAL STATES
-  const overlay = document.querySelector('.about-overlay');
-  const listView = document.getElementById('listView');
-  const sliderView = document.getElementById('sliderView');
-  const mobileListView = document.getElementById('mobileListView');
-  const isMobile = window.innerWidth <= 650;
-  
-  if (overlay) overlay.style.display = 'none';
-  
-  // Set simple initial view visibility
-  if (isMobile) {
-    if (listView) listView.style.display = 'none';
-    if (sliderView) sliderView.style.display = 'none';
-    if (mobileListView) mobileListView.style.display = 'flex';
-  } else {
-    if (mobileListView) mobileListView.style.display = 'none';
-    // For desktop, default to slider view visible (since that seems to be your default)
-    if (sliderView) sliderView.style.display = 'block';
-    if (listView) listView.style.display = 'none';
-  }
-  
   // Global state to track initialization
   let isInitialized = false;
   let currentBreakpoint = null;
@@ -56,7 +35,21 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a[href]').forEach(link => {
       const handler = (e) => {
         const href = link.getAttribute('href');
+        
+        // Skip if no href, or if it's a hash, mailto, tel
         if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+        
+        // Skip external links completely - let browser handle them
+        if (href.startsWith('http://') || href.startsWith('https://')) {
+          return; // Don't prevent default, don't add transition
+        }
+        
+        // Skip links with target attribute - let browser handle them  
+        if (link.hasAttribute('target')) {
+          return; // Don't prevent default, don't add transition
+        }
+        
+        // Only handle internal links
         e.preventDefault();
         sessionStorage.setItem('navigationTriggered', 'true');
         gsap.set('.container-block', { y: '100%' });
@@ -164,8 +157,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const tl = gsap.timeline({
           onComplete: () => {
-            listView.classList.add("is-hidden");
-            sliderView.classList.remove("is-hidden");
+            listView.style.display = 'none';
+            sliderView.style.display = 'block';
 
             const slideEls = document.querySelectorAll(".slide");
             const slideInfos = document.querySelectorAll(".slide-info");
@@ -206,8 +199,8 @@ document.addEventListener('DOMContentLoaded', () => {
         collapseSlides().then(() => {
           btnList2.classList.add("is-active");
           btnSlider.classList.remove("is-active");
-          listView.classList.remove("is-hidden");
-          sliderView.classList.add("is-hidden");
+          listView.style.display = 'block';
+          sliderView.style.display = 'none';
 
           animateListItemsIn();
 
@@ -597,13 +590,20 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    gsap.set(mobileListItems, { opacity: 0, y: 40 });
+    // Set initial states - items start offset and invisible
+    gsap.set(mobileListItems, { 
+      opacity: 0, 
+      y: 60,
+      scale: 0.95
+    });
 
+    // Animate items in with more dynamic movement
     gsap.to(mobileListItems, {
       opacity: 0.5,
       y: 0,
-      duration: 0.6,
-      stagger: 0.07,
+      scale: 1,
+      duration: 0.8,
+      stagger: 0.1,
       ease: 'power2.out',
       onComplete: () => {
         const firstItem = mobileListItems[0];
@@ -612,9 +612,20 @@ document.addEventListener('DOMContentLoaded', () => {
         firstItem.classList.add('is-active');
         firstItem.classList.remove('mobile-inactive');
 
+        // Animate the first item to full opacity with a slight bounce
         gsap.to(firstItem, {
           opacity: 1,
-          duration: 0.3,
+          scale: 1.02,
+          duration: 0.4,
+          ease: 'back.out(1.2)',
+          onComplete: () => {
+            // Settle back to normal scale
+            gsap.to(firstItem, {
+              scale: 1,
+              duration: 0.2,
+              ease: 'power2.out'
+            });
+          },
           onStart: () => {
             mobileListItems.forEach(item => {
               if (item !== firstItem) {
@@ -641,11 +652,25 @@ document.addEventListener('DOMContentLoaded', () => {
           if (i === item) {
             i.classList.add('is-active');
             i.classList.remove('mobile-inactive');
-            gsap.to(i, { opacity: 1, duration: 0.3 });
+            // Add a subtle bounce when item becomes active
+            gsap.to(i, { 
+              opacity: 1, 
+              scale: 1.02,
+              duration: 0.3,
+              ease: 'back.out(1.2)',
+              onComplete: () => {
+                gsap.to(i, { scale: 1, duration: 0.2, ease: 'power2.out' });
+              }
+            });
           } else {
             i.classList.remove('is-active');
             i.classList.add('mobile-inactive');
-            gsap.to(i, { opacity: 0.5, duration: 0.3 });
+            gsap.to(i, { 
+              opacity: 0.5, 
+              scale: 1,
+              duration: 0.3,
+              ease: 'power2.out'
+            });
           }
         });
 
@@ -689,9 +714,19 @@ document.addEventListener('DOMContentLoaded', () => {
       if (listView) listView.style.display = 'none';
     } else {
       if (mobileListView) mobileListView.style.display = 'none';
-      // For desktop, default to slider view unless list view is specifically active
-      if (sliderView) sliderView.style.display = 'block';
-      if (listView) listView.style.display = 'none';
+      
+      // For desktop, check which button is active to determine view
+      const btnList = document.getElementById("btn-list");
+      
+      if (btnList && btnList.classList.contains('is-active')) {
+        // List button is active, show list view
+        if (listView) listView.style.display = 'block';
+        if (sliderView) sliderView.style.display = 'none';
+      } else {
+        // Default to slider view on desktop
+        if (sliderView) sliderView.style.display = 'block';
+        if (listView) listView.style.display = 'none';
+      }
     }
   }
 

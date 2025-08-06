@@ -681,28 +681,23 @@ p{
     
 }
 
+#mobileListView{display: none;}
+
+#sliderView{display: none;}
+
 
 .about-overlay{
-    display: none ;
+    display: none;
     height: 100dvh;
     width: 100vw;
     background-color: var(--color-bg-inverse);
-    z-index: 100;
+    z-index: 110;
     position: fixed;
     top: 0;
     left: 0;
     overflow-y: scroll;
 
 }
-
-.is-hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    display: none !important;
-  }
-
-
 
 .overlay-info-container{
     display: flex;
@@ -1374,7 +1369,7 @@ body:has([data-cursor]:hover) .cursor {
     flex: 1 1 351px;
 }
 
-
+.is-hidden{display: none ;}
 .project-hero-img{height: 468px; border-radius: 4px;}
 
 
@@ -1616,7 +1611,7 @@ body:has([data-cursor]:hover) .cursor {
     position: fixed;
     width: 100vw;
     top: 0;
-    z-index: 20;
+    z-index: 100;
   }
 
   .nav-container{
