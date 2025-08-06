@@ -1,4 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Hide elements immediately to prevent flash - SIMPLE INITIAL STATES
+  const overlay = document.querySelector('.about-overlay');
+  const listView = document.getElementById('listView');
+  const sliderView = document.getElementById('sliderView');
+  const mobileListView = document.getElementById('mobileListView');
+  const isMobile = window.innerWidth <= 650;
+  
+  if (overlay) overlay.style.display = 'none';
+  
+  // Set simple initial view visibility
+  if (isMobile) {
+    if (listView) listView.style.display = 'none';
+    if (sliderView) sliderView.style.display = 'none';
+    if (mobileListView) mobileListView.style.display = 'flex';
+  } else {
+    if (mobileListView) mobileListView.style.display = 'none';
+    // For desktop, default to slider view visible (since that seems to be your default)
+    if (sliderView) sliderView.style.display = 'block';
+    if (listView) listView.style.display = 'none';
+  }
+  
   // Global state to track initialization
   let isInitialized = false;
   let currentBreakpoint = null;
@@ -662,14 +683,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const listView = document.getElementById('listView');
     const isMobile = window.innerWidth <= 650;
 
-    if (mobileListView) {
-      mobileListView.style.display = isMobile ? 'flex' : 'none';
-    }
-    if (sliderView) {
-      sliderView.style.display = isMobile ? 'none' : 'block';
-    }
-    if (listView) {
-      listView.style.display = isMobile ? 'none' : 'block';
+    if (isMobile) {
+      if (mobileListView) mobileListView.style.display = 'flex';
+      if (sliderView) sliderView.style.display = 'none';
+      if (listView) listView.style.display = 'none';
+    } else {
+      if (mobileListView) mobileListView.style.display = 'none';
+      // For desktop, default to slider view unless list view is specifically active
+      if (sliderView) sliderView.style.display = 'block';
+      if (listView) listView.style.display = 'none';
     }
   }
 
